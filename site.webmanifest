@@ -1,0 +1,27 @@
+{
+  "name": "Vincent Alizé",
+  "short_name": "Vincent Alizé",
+  "description": "Découvrez le nouveau projet solo de Vincent Alizé, ancien chanteur et compositeur de NOEM. Musique authentique et évocatrice.",
+  "lang": "fr",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "ico"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32"
+    }
+  ]
+    "theme_color": "#800020",
+    "background_color": "#800020",
+    "display": "standalone"
+
+}
