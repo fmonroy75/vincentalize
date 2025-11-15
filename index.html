@@ -6,799 +6,8 @@
     <title>Vincentalize - Música Electrónica Experimental</title>
     <meta name="description" content="Vincentalize - Músico de electrónica experimental. Descubre su música, álbumes y próximos lanzamientos.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Variables y reset */
-        :root {
-            --primary-color: #0d1424;
-            --secondary-color: #1a233a;
-            --accent-color: #4a36b6;
-            --highlight-color: #7e6af2;
-            --text-color: #e2e8f0;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Animaciones */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px var(--highlight-color); }
-            50% { box-shadow: 0 0 20px var(--highlight-color); }
-            100% { box-shadow: 0 0 5px var(--highlight-color); }
-        }
-
-        /* Header y navegación */
-        header {
-            background-color: rgba(13, 20, 36, 0.95);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(126, 106, 242, 0.2);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--highlight-color);
-            text-decoration: none;
-            animation: pulse 4s infinite;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 1.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a:hover {
-            color: var(--highlight-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--highlight-color);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            transition: var(--transition);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(13, 20, 36, 0.85), rgba(26, 35, 58, 0.9)), 
-                        url('https://f4.bcbits.com/img/a4152999994_16.jpg') no-repeat center center/cover;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 10%, var(--primary-color) 90%);
-        }
-
-        .hero-content {
-            animation: fadeIn 1.5s ease-out;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(to right, #7e6af2, #a396f4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #cbd5e0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
-            color: white;
-            padding: 0.9rem 2.2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(126, 106, 242, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(126, 106, 242, 0.5);
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::after {
-            left: 100%;
-        }
-
-        /* Secciones generales */
-        section {
-            padding: 6rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.8rem;
-            display: inline-block;
-            position: relative;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, var(--accent-color), var(--highlight-color));
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        /* Sobre el artista */
-        .about {
-            background-color: var(--secondary-color);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            animation: float 6s ease-in-out infinite;
-            position: relative;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(126, 106, 242, 0.2), transparent);
-            z-index: 1;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--highlight-color);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Música */
-        .music {
-            background-color: var(--primary-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .music::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
-            opacity: 0.1;
-            border-radius: 50%;
-        }
-
-        .albums {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .album {
-            background: linear-gradient(145deg, #1a233a, #151c2e);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            border: 1px solid rgba(126, 106, 242, 0.1);
-        }
-
-        .album:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-color: rgba(126, 106, 242, 0.3);
-            animation: glow 2s infinite;
-        }
-
-        .album-image {
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .album-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .album:hover .album-image img {
-            transform: scale(1.1);
-        }
-
-        .album-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 20, 36, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .album:hover .album-overlay {
-            opacity: 1;
-        }
-
-        .play-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--highlight-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            transition: var(--transition);
-            transform: scale(0.8);
-            cursor: pointer;
-        }
-
-        .album:hover .play-btn {
-            transform: scale(1);
-        }
-
-        .album-info {
-            padding: 1.8rem;
-        }
-
-        .album-info h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-            color: var(--text-color);
-        }
-
-        .album-info p {
-            color: #a0aec0;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
-        }
-
-        .album-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .album-link {
-            flex: 1;
-            text-align: center;
-            padding: 0.6rem;
-            background: rgba(126, 106, 242, 0.1);
-            border-radius: 5px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            border: 1px solid rgba(126, 106, 242, 0.2);
-        }
-
-        .album-link:hover {
-            background: rgba(126, 106, 242, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Reproductor de audio */
-        .audio-player {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(26, 35, 58, 0.95);
-            padding: 15px 20px;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(126, 106, 242, 0.3);
-            z-index: 1000;
-            display: none;
-            align-items: center;
-            gap: 15px;
-            min-width: 300px;
-        }
-
-        .audio-player.active {
-            display: flex;
-        }
-
-        .player-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .player-btn {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .player-btn:hover {
-            color: var(--highlight-color);
-        }
-
-        .track-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .track-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .track-album {
-            font-size: 0.8rem;
-            color: #a0aec0;
-        }
-
-        .progress-container {
-            flex: 2;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .progress-bar {
-            flex: 1;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .progress {
-            height: 100%;
-            background: var(--highlight-color);
-            width: 0%;
-            transition: width 0.1s;
-        }
-
-        .time {
-            font-size: 0.8rem;
-            color: #a0aec0;
-            min-width: 40px;
-        }
-
-        /* Contacto */
-        .contact {
-            background-color: var(--secondary-color);
-            position: relative;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--highlight-color) 0%, transparent 70%);
-            opacity: 0.05;
-            border-radius: 50%;
-        }
-
-        .contact-content {
-            display: flex;
-            gap: 4rem;
-        }
-
-        .contact-info, .contact-form {
-            flex: 1;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1.5rem;
-            color: var(--highlight-color);
-            font-size: 1.8rem;
-        }
-
-        .contact-details {
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-detail i {
-            margin-right: 1rem;
-            color: var(--highlight-color);
-            font-size: 1.2rem;
-            width: 30px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px) rotate(10deg);
-            box-shadow: 0 10px 20px rgba(126, 106, 242, 0.4);
-        }
-
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.7rem;
-            font-weight: 500;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.08);
-            color: var(--text-color);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1rem;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.12);
-            border-color: var(--highlight-color);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            padding: 3rem 0 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(126, 106, 242, 0.2);
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--highlight-color);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-links {
-            display: flex;
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .footer-links li {
-            margin: 0 1.2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: var(--highlight-color);
-        }
-
-        .copyright {
-            color: #a0aec0;
-            font-size: 0.95rem;
-            margin-top: 1.5rem;
-        }
-
-        /* Efectos de scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-                gap: 3rem;
-            }
-            
-            .contact-content {
-                flex-direction: column;
-                gap: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                padding: 1.5rem 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-                border-top: 1px solid rgba(126, 106, 242, 0.2);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0.8rem 0;
-                text-align: center;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-
-            .albums {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-
-            .audio-player {
-                min-width: 280px;
-                padding: 12px 15px;
-                flex-direction: column;
-                gap: 10px;
-                border-radius: 20px;
-            }
-
-            .progress-container {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .album-links {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+   
 </head>
 <body>
     <!-- Header -->
@@ -828,7 +37,7 @@
     <section id="inicio" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1><img src="assets/img/0029276633_100.png"></h1>
+                <h1><img src="assets/img/0029276633_100.png" alt="viventalize"></h1>
                 <p>Explorando los límites del sonido electrónico y la experimentación musical</p>
                 <a href="#musica" class="btn">Descubre mi música</a>
             </div>
@@ -843,7 +52,7 @@
             </div>
             <div class="about-content fade-in">
                 <div class="about-image">
-                    <img src="https://f4.bcbits.com/img/a4152999994_16.jpg" alt="Vincentalize - Músico">
+                    <img src="assets/img/photo-1493225457124-a3eb161ffa5f.avif" alt="Vincentalize - Músico">
                 </div>
                 <div class="about-text">
                     <h3>La esencia de Vincentalize</h3>
@@ -860,117 +69,99 @@
     <section id="musica" class="music">
         <div class="container">
             <div class="section-title">
-                <h2>Discografía</h2>
+                <h2>Musique</h2>
             </div>
-            <div class="albums">
-                <!-- Álbum 1 -->
-                <div class="album fade-in">
-                    <div class="album-image">
-                        <img src="https://f4.bcbits.com/img/a4152999994_10.jpg" alt="Ethereal Dreams">
-                        <div class="album-overlay">
-                            <div class="play-btn" data-album="ethereal">
-                                <i class="fas fa-play"></i>
-                            </div>
+            <div class="music-player fade-in">
+                <div class="player-header">
+                    <div class="album-selector">
+                        <div class="album-option active" data-album="royaumes_album">
+                            <img src="assets/img/nos_royaumes_interdits_album.jpg" alt="Nos royaumes interdits (album)">
+                            <h4>Nos royaumes interdits (album)</h4>
+                            <p>2021 • 12 pistas</p>
                         </div>
+                        <div class="album-option" data-album="royaumes_single">
+                            <img src="assets/img/nos_royaumes_interdits_single.jpg" alt="Nos royaumes interdits (single)">
+                            <h4>Nos royaumes interdits (single)</h4>
+                            <p>2021 • 1 pistas</p>
+                        </div>
+                        <div class="album-option" data-album="météore">
+                            <img src="assets/img/ma_meteore.jpg" alt="Ma météore">
+                            <h4>Ma météore (single)                            </h4>
+                            <p>2021 • 1 pistas</p>
+                        </div>
+                        <div class="album-option" data-album="Dans">
+                            <img src="assets/img/dans_tes_bras.jpg" alt="Dans tes bras (single)  ">
+                            <h4>Dans tes bras (single)                            </h4>
+                            <p>2021 • 1 pistas</p>
+                        </div>
+                        <div class="album-option" data-album="Aujourd">
+                            <img src="assets/img/aujourdhui.jpg" alt="Aujourd'hui (single)">
+                            <h4>Aujourd'hui (single)                            </h4>
+                            <p>2021 • 1 pistas</p>
+                        </div>
+                        <div class="album-option" data-album="Notre">
+                            <img src="assets/img/notre_terre_qui_etait.jpg" alt="Notre terre qui était (single)">
+                            <h4>Notre terre qui était (single)                            </h4>
+                            <p>2021 • 1 pistas</p>
+                        </div>
+                        <div class="album-option" data-album="Deux">
+                            <img src="assets/img/deus_soufles.jpg" alt="Deux souffles (mini-album) ">
+                            <h4>Deux souffles (mini-album)    </h4>
+                            <p>2018 • 2 pistas</p>
+                        </div>                        
                     </div>
-                    <div class="album-info">
-                        <h3>Ethereal Dreams</h3>
-                        <p>2023 • Álbum • 8 pistas</p>
-                        <div class="album-links">
-                            <a href="https://vincentalize.bandcamp.com/album/ethereal-dreams" target="_blank" class="album-link">Escuchar</a>
-                            <a href="https://vincentalize.bandcamp.com/album/ethereal-dreams" target="_blank" class="album-link">Descargar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Álbum 2 -->
-                <div class="album fade-in">
-                    <div class="album-image">
-                        <img src="https://f4.bcbits.com/img/a1867852337_10.jpg" alt="Digital Echoes">
-                        <div class="album-overlay">
-                            <div class="play-btn" data-album="digital">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <h3>Digital Echoes</h3>
-                        <p>2022 • EP • 5 pistas</p>
-                        <div class="album-links">
-                            <a href="https://vincentalize.bandcamp.com/album/digital-echoes" target="_blank" class="album-link">Escuchar</a>
-                            <a href="https://vincentalize.bandcamp.com/album/digital-echoes" target="_blank" class="album-link">Descargar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Álbum 3 -->
-                <div class="album fade-in">
-                    <div class="album-image">
-                        <img src="https://f4.bcbits.com/img/a1311118935_10.jpg" alt="Neon Shadows">
-                        <div class="album-overlay">
-                            <div class="play-btn" data-album="neon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <h3>Neon Shadows</h3>
-                        <p>2021 • Álbum • 7 pistas</p>
-                        <div class="album-links">
-                            <a href="https://vincentalize.bandcamp.com/album/neon-shadows" target="_blank" class="album-link">Escuchar</a>
-                            <a href="https://vincentalize.bandcamp.com/album/neon-shadows" target="_blank" class="album-link">Descargar</a>
-                        </div>
+                    
+                    <div class="track-selector">
+                        <!-- Las opciones de pistas se cargarán dinámicamente -->
                     </div>
                 </div>
                 
-                <!-- Álbum 4 -->
-                <div class="album fade-in">
-                    <div class="album-image">
-                        <img src="https://f4.bcbits.com/img/a2341332105_10.jpg" alt="Urban Resonance">
-                        <div class="album-overlay">
-                            <div class="play-btn" data-album="urban">
-                                <i class="fas fa-play"></i>
+                <div class="player-body">
+                    <div class="now-playing">
+                        <div class="now-playing-image">
+                            <img src="https://f4.bcbits.com/img/a4152999994_10.jpg" alt="Álbum actual" id="nowPlayingImage">
+                        </div>
+                        <div class="now-playing-info">
+                            <h3 id="nowPlayingTitle">Selecciona una canción</h3>
+                            <p id="nowPlayingAlbum">Vincentalize</p>
+                            <div class="player-controls">
+                                <button class="control-btn" id="prevBtn">
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button class="control-btn play-btn" id="playPauseBtn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="control-btn" id="nextBtn">
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" id="progressBar">
+                                    <div class="progress" id="progress"></div>
+                                </div>
+                                <div class="time-info">
+                                    <span id="currentTime">0:00</span>
+                                    <span id="duration">0:00</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="album-info">
-                        <h3>Urban Resonance</h3>
-                        <p>2020 • Compilación • 10 pistas</p>
-                        <div class="album-links">
-                            <a href="https://vincentalize.bandcamp.com/album/urban-resonance" target="_blank" class="album-link">Escuchar</a>
-                            <a href="https://vincentalize.bandcamp.com/album/urban-resonance" target="_blank" class="album-link">Descargar</a>
+                    
+                    <div class="lyrics-section">
+                        <div class="lyrics-toggle" id="lyricsToggle">
+                            <h4>Letra de la canción</h4>
+                            <i class="fas fa-chevron-down" id="lyricsIcon"></i>
+                        </div>
+                        <div class="lyrics-content" id="lyricsContent">
+                            <div class="lyrics" id="lyricsText">
+                                Selecciona una canción para ver su letra
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Reproductor de audio -->
-    <div class="audio-player" id="audioPlayer">
-        <div class="player-controls">
-            <button class="player-btn" id="prevBtn">
-                <i class="fas fa-step-backward"></i>
-            </button>
-            <button class="player-btn" id="playPauseBtn">
-                <i class="fas fa-play"></i>
-            </button>
-            <button class="player-btn" id="nextBtn">
-                <i class="fas fa-step-forward"></i>
-            </button>
-        </div>
-        <div class="track-info">
-            <div class="track-title" id="trackTitle">Selecciona una canción</div>
-            <div class="track-album" id="trackAlbum">Vincentalize</div>
-        </div>
-        <div class="progress-container">
-            <span class="time" id="currentTime">0:00</span>
-            <div class="progress-bar" id="progressBar">
-                <div class="progress" id="progress"></div>
-            </div>
-            <span class="time" id="duration">0:00</span>
-        </div>
-    </div>
 
     <!-- Contacto -->
     <section id="contacto" class="contact">
@@ -988,11 +179,7 @@
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Ciudad de México, México</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-music"></i>
-                            <span>Música electrónica experimental</span>
+                            <span>Sherbooke, Québec</span>
                         </div>
                     </div>
                     <h3>Sígueme en:</h3>
@@ -1010,23 +197,11 @@
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Enviar Mensaje</button>
-                    </form>
+                    
+                    <a href="https://wa.me/5215512345678?text=Hola%20Vincentalize,%20me%20interesa%20tu%20música" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Enviar mensaje por WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -1046,68 +221,186 @@
                     <li><a href="#musica">Música</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <p class="copyright">&copy; 2023 Vincentalize. Todos los derechos reservados.</p>
+                <p class="copyright">&copy; 2025 <a href="https://www.ingeniumbright.com" alt="Ingeniumbright" taget="_blank">ingeniumBright</a>. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Datos de la música de Vincentalize (basados en su Bandcamp)
+        // Datos de la música de Vincentalize
         const musicData = {
-            ethereal: {
-                title: "Ethereal Dreams",
+            royaumes_album: {
+                title: "Nos royaumes interdits (album)",
+                image: "assets/img/nos_royaumes_interdits_album.jpg",
+                year: "2021",
                 tracks: [
-                    { title: "Dream Sequence", src: "https://bandcamp.com/EmbeddedPlayer/album=4152999994/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=1" },
-                    { title: "Lucid Waves", src: "https://bandcamp.com/EmbeddedPlayer/album=4152999994/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=2" },
-                    { title: "Ethereal Visions", src: "https://bandcamp.com/EmbeddedPlayer/album=4152999994/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=3" }
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
+                    { 
+                        title: "xxxx", 
+                        duration: "3:45",
+                        lyrics: "xxxx"
+                    },
                 ]
             },
-            digital: {
-                title: "Digital Echoes",
+            royaumes_single: {
+                title: "Nos royaumes interdits (single)",
+                image: "assets/img/nos_royaumes_interdits_single.jpg",
+                year: "2021",
                 tracks: [
-                    { title: "Binary Pulse", src: "https://bandcamp.com/EmbeddedPlayer/album=1867852337/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=1" },
-                    { title: "Data Stream", src: "https://bandcamp.com/EmbeddedPlayer/album=1867852337/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=2" },
-                    { title: "Digital Memory", src: "https://bandcamp.com/EmbeddedPlayer/album=1867852337/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=3" }
+                    { 
+                        title: "Nos royaumes interdits (single)", 
+                        duration: "3:56",
+                        lyrics: "Comme deux étoiles filantes\nQui déchirent la noirceur de la nuit\nÀ la croisée des mondes\nNos royaumes interdits\n\nJ’ai rêvé de nos jours\nDe nos nuits, nos fantaisies\nJ’ai rêvé de notre amour\nDans une autre vie\n\nNous sommes les héros d’une tragédie\nDont tout le monde sait\ncomment ça finit\nDans le vin et le sang, on célébrera notre mort\nOn brûlera toutes les pages de notre histoire\nIl ne restera plus rien de nous que l’oubli\n\nNos royaumes interdits\n\nJ’ai rêvé de nos jours\nDe nos nuits, nos fantaisies\nJ’ai rêvé de notre amour\nDans une autre vie\n\nNos royaumes interdits"
+                    },
                 ]
             },
-            neon: {
-                title: "Neon Shadows",
+            météore: {
+                title: "Ma météore",
+                image: "assets/img/ma_meteore.jpg",
+                year: "2021",
                 tracks: [
-                    { title: "Neon Dreams", src: "https://bandcamp.com/EmbeddedPlayer/album=1311118935/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=1" },
-                    { title: "Shadow Pulse", src: "https://bandcamp.com/EmbeddedPlayer/album=1311118935/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=2" },
-                    { title: "City Lights", src: "https://bandcamp.com/EmbeddedPlayer/album=1311118935/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=3" }
+                    { 
+                        title: "Ma météore", 
+                        duration: "5:51",
+                        lyrics: ""
+                    },
                 ]
             },
-            urban: {
-                title: "Urban Resonance",
+            Dans: {
+                title: "Dans tes bras (single)",
+                image: "assets/img/dans_tes_bras.jpg",
+                year: "2020",
                 tracks: [
-                    { title: "Metropolis", src: "https://bandcamp.com/EmbeddedPlayer/album=2341332105/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=1" },
-                    { title: "Urban Echo", src: "https://bandcamp.com/EmbeddedPlayer/album=2341332105/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=2" },
-                    { title: "City Resonance", src: "https://bandcamp.com/EmbeddedPlayer/album=2341332105/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/track=3" }
+                    { 
+                        title: "Dans tes bras", 
+                        duration: "4:17",
+                        lyrics: ""
+                    },
                 ]
-            }
+            },
+            Aujourd: {
+                title: "Aujourd'hui (single)",
+                image: "assets/img/aujourdhui.jpg",
+                year: "2020",
+                tracks: [
+                    { 
+                        title: "Aujourd'hui", 
+                        duration: "6:17",
+                        lyrics: "Tu es maintenant partie\nComme le soleil, la nuit\nDans un éclair, ébloui\nEt le tonnerre, mon cri\n\nTu es encore ici\nTu es toute ma vie\nUne seconde, l’infini\nEt sombrons dans l’oubli\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nL’étranger que je suis\nAujourd’hui\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nLe brasier que je fuis\nAujourd’hui\n\nTu es ma belle noirceur\nLe grand vide des heures\nMon vertige des grandeurs\nL’inconnu, la peur\n\nTu n’es plus qu’une abstraction\nL’hologramme de mes fictions\nDans un monde de fractions\nOù je perds la raison\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nL’étranger que je suis\nAujourd’hui\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nLe brasier que je fuis\nAujourd’hui"
+                    },
+                ]
+            },
+            Notre: {
+                title: "Notre terre qui était (single)",
+                image: "assets/img/notre_terre_qui_etait.jpg",
+                year: "2019",
+                tracks: [
+                    { 
+                        title: "Notre terre qui était", 
+                        duration: "5:59",
+                        lyrics: "Voix et guitare : Vincent Alizé\nPiano: Jean-François Racine\nDrum: Rafael Poggetti\nVioloncelle: Marie-Philippe Lemay\n\nRéalisation musicale: Luc Boivin et Vincent Alizé au studio Redtube\nMixage: Luc Boivin\nMastering: Yannick St-Amand\nMaison de disque: Les Disques Inconnu\nparoles\nSorti d’un rêve où tout était parfait\nLes couleurs se mêlaient à la lumière\nL’amour se croyait pour l’univers\n\nÀ l’abri des jours sans l’ombre d’un reflet\nMême la noirceur brillait au fond de tes yeux\nUn soleil se levait sur notre terre qui était\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nJ’ai grandi dans tes bras\nComme un arbre à la fois\nMa foret sacrée, mon palais\nDe fougères et de fleurs\nQui suivaient nos pas\n\nJ’ai vieilli soudain\nLa seconde de ma vie\nPassée en une seule nuit\nSans faire de bruit\nLes yeux tournés vers toi\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur est de poussière\nS’allongent mes déserts"
+                    },
+                ]
+            },
+            Deux: {
+                title: "Deux souffles (mini-album)",
+                image: "assets/img/deus_soufles.jpg",
+                year: "2018",
+                tracks: [
+                    { 
+                        title: "Quelques lueurs", 
+                        duration: "3:58",
+                        lyrics: ""
+                    },
+                    { 
+                        title: "Nous reviendrons", 
+                        duration: "3:43",
+                        lyrics: ""
+                    },
+                ]
+            },
+            
         };
 
         // Variables del reproductor
-        let currentAlbum = null;
+        let currentAlbum = 'ethereal';
         let currentTrackIndex = 0;
-        let audio = new Audio();
         let isPlaying = false;
 
         // Elementos del DOM
-        const audioPlayer = document.getElementById('audioPlayer');
+        const albumOptions = document.querySelectorAll('.album-option');
+        const trackSelector = document.querySelector('.track-selector');
+        const nowPlayingImage = document.getElementById('nowPlayingImage');
+        const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+        const nowPlayingAlbum = document.getElementById('nowPlayingAlbum');
         const playPauseBtn = document.getElementById('playPauseBtn');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        const trackTitle = document.getElementById('trackTitle');
-        const trackAlbum = document.getElementById('trackAlbum');
-        const progressBar = document.getElementById('progressBar');
         const progress = document.getElementById('progress');
         const currentTimeEl = document.getElementById('currentTime');
         const durationEl = document.getElementById('duration');
+        const lyricsToggle = document.getElementById('lyricsToggle');
+        const lyricsContent = document.getElementById('lyricsContent');
+        const lyricsText = document.getElementById('lyricsText');
+        const lyricsIcon = document.getElementById('lyricsIcon');
 
-        // Animación al hacer scroll
+        // Inicialización
         document.addEventListener('DOMContentLoaded', function() {
+            // Animación al hacer scroll
             const fadeElements = document.querySelectorAll('.fade-in');
             
             const fadeInOnScroll = function() {
@@ -1121,7 +414,6 @@
                 });
             };
             
-            // Ejecutar al cargar y al hacer scroll
             fadeInOnScroll();
             window.addEventListener('scroll', fadeInOnScroll);
             
@@ -1146,16 +438,6 @@
                 });
             });
             
-            // Manejo del formulario de contacto
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('¡Gracias por tu mensaje! Te responderé pronto.');
-                    contactForm.reset();
-                });
-            }
-            
             // Menú hamburguesa para móviles
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
@@ -1178,11 +460,11 @@
                 }
             });
 
-            // Configurar botones de reproducción
-            document.querySelectorAll('.play-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
+            // Configurar selectores de álbum
+            albumOptions.forEach(option => {
+                option.addEventListener('click', function() {
                     const albumKey = this.getAttribute('data-album');
-                    playAlbum(albumKey);
+                    selectAlbum(albumKey);
                 });
             });
 
@@ -1190,109 +472,170 @@
             playPauseBtn.addEventListener('click', togglePlayPause);
             prevBtn.addEventListener('click', playPreviousTrack);
             nextBtn.addEventListener('click', playNextTrack);
-            progressBar.addEventListener('click', setProgress);
 
-            // Eventos del audio
-            audio.addEventListener('loadedmetadata', updateDuration);
-            audio.addEventListener('timeupdate', updateProgress);
-            audio.addEventListener('ended', playNextTrack);
+            // Toggle de letras
+            lyricsToggle.addEventListener('click', function() {
+                lyricsContent.classList.toggle('active');
+                lyricsIcon.classList.toggle('fa-chevron-down');
+                lyricsIcon.classList.toggle('fa-chevron-up');
+            });
+
+            // Cargar álbum inicial
+            selectAlbum('royaumes_album');
         });
 
         // Funciones del reproductor
-        function playAlbum(albumKey) {
-            if (currentAlbum === albumKey && isPlaying) {
-                pauseAudio();
-                return;
-            }
+        function selectAlbum(albumKey) {
+            // Actualizar selector de álbum
+            albumOptions.forEach(option => {
+                if (option.getAttribute('data-album') === albumKey) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
 
             currentAlbum = albumKey;
             currentTrackIndex = 0;
-            audioPlayer.classList.add('active');
-            loadTrack(currentTrackIndex);
-            playAudio();
-        }
-
-        function loadTrack(index) {
-            const track = musicData[currentAlbum].tracks[index];
-            // En una implementación real, aquí cargaríamos el archivo de audio
-            // Por ahora simulamos la reproducción
-            trackTitle.textContent = track.title;
-            trackAlbum.textContent = musicData[currentAlbum].title;
             
-            // Simular duración y progreso para la demo
-            audio.currentTime = 0;
-            updateProgress();
+            // Actualizar información del álbum
+            const album = musicData[albumKey];
+            nowPlayingImage.src = album.image;
+            nowPlayingAlbum.textContent = `${album.title} (${album.year})`;
+            
+            // Generar lista de pistas
+            trackSelector.innerHTML = '';
+            album.tracks.forEach((track, index) => {
+                const trackOption = document.createElement('div');
+                trackOption.className = 'track-option';
+                if (index === currentTrackIndex) {
+                    trackOption.classList.add('active');
+                }
+                trackOption.innerHTML = `
+                    <div class="track-number">${index + 1}</div>
+                    <div class="track-info">
+                        <div class="track-title">${track.title}</div>
+                        <div class="track-duration">${track.duration}</div>
+                    </div>
+                `;
+                trackOption.addEventListener('click', () => {
+                    selectTrack(index);
+                });
+                trackSelector.appendChild(trackOption);
+            });
+            
+            // Cargar primera pista
+            selectTrack(0);
         }
 
-        function playAudio() {
-            isPlaying = true;
-            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            // En una implementación real: audio.play()
-        }
+        function selectTrack(index) {
+            // Actualizar selector de pistas
+            document.querySelectorAll('.track-option').forEach((option, i) => {
+                if (i === index) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
 
-        function pauseAudio() {
-            isPlaying = false;
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-            // En una implementación real: audio.pause()
-        }
-
-        function togglePlayPause() {
+            currentTrackIndex = index;
+            const track = musicData[currentAlbum].tracks[index];
+            
+            // Actualizar información de reproducción
+            nowPlayingTitle.textContent = track.title;
+            lyricsText.textContent = track.lyrics;
+            
+            // Reiniciar progreso
+            progress.style.width = '0%';
+            currentTimeEl.textContent = '0:00';
+            durationEl.textContent = track.duration;
+            
+            // Si estaba reproduciendo, continuar
             if (isPlaying) {
-                pauseAudio();
-            } else {
-                playAudio();
+                // En una implementación real, aquí cargaríamos y reproduciríamos el audio
             }
         }
 
-        function playPreviousTrack() {
-            if (!currentAlbum) return;
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                // En una implementación real: audio.play()
+                
+                // Simular progreso para la demo
+                simulatePlayback();
+            } else {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                // En una implementación real: audio.pause()
+                
+                // Detener simulación
+                if (playbackInterval) {
+                    clearInterval(playbackInterval);
+                    playbackInterval = null;
+                }
+            }
+        }
+
+        let playbackInterval = null;
+        let currentProgress = 0;
+
+        function simulatePlayback() {
+            if (playbackInterval) {
+                clearInterval(playbackInterval);
+            }
             
+            currentProgress = 0;
+            playbackInterval = setInterval(() => {
+                currentProgress += 0.5;
+                progress.style.width = `${currentProgress}%`;
+                
+                // Calcular tiempo actual basado en la duración de la pista
+                const track = musicData[currentAlbum].tracks[currentTrackIndex];
+                const totalSeconds = timeToSeconds(track.duration);
+                const currentSeconds = Math.floor((currentProgress / 100) * totalSeconds);
+                currentTimeEl.textContent = secondsToTime(currentSeconds);
+                
+                if (currentProgress >= 100) {
+                    clearInterval(playbackInterval);
+                    playbackInterval = null;
+                    playNextTrack();
+                }
+            }, 500);
+        }
+
+        function playPreviousTrack() {
             currentTrackIndex--;
             if (currentTrackIndex < 0) {
                 currentTrackIndex = musicData[currentAlbum].tracks.length - 1;
             }
-            loadTrack(currentTrackIndex);
-            if (isPlaying) playAudio();
+            selectTrack(currentTrackIndex);
+            if (isPlaying) {
+                // Reiniciar simulación
+                simulatePlayback();
+            }
         }
 
         function playNextTrack() {
-            if (!currentAlbum) return;
-            
             currentTrackIndex++;
             if (currentTrackIndex >= musicData[currentAlbum].tracks.length) {
                 currentTrackIndex = 0;
             }
-            loadTrack(currentTrackIndex);
-            if (isPlaying) playAudio();
+            selectTrack(currentTrackIndex);
+            if (isPlaying) {
+                // Reiniciar simulación
+                simulatePlayback();
+            }
         }
 
-        function updateDuration() {
-            const duration = audio.duration;
-            durationEl.textContent = formatTime(duration);
+        // Funciones auxiliares para el tiempo
+        function timeToSeconds(timeStr) {
+            const parts = timeStr.split(':');
+            return parseInt(parts[0]) * 60 + parseInt(parts[1]);
         }
 
-        function updateProgress() {
-            const currentTime = audio.currentTime;
-            const duration = audio.duration || 180; // 3 minutos por defecto para demo
-            
-            const progressPercent = (currentTime / duration) * 100;
-            progress.style.width = `${progressPercent}%`;
-            
-            currentTimeEl.textContent = formatTime(currentTime);
-            durationEl.textContent = formatTime(duration);
-        }
-
-        function setProgress(e) {
-            const width = this.clientWidth;
-            const clickX = e.offsetX;
-            const duration = audio.duration;
-            
-            audio.currentTime = (clickX / width) * duration;
-        }
-
-        function formatTime(seconds) {
+        function secondsToTime(seconds) {
             const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
+            const secs = seconds % 60;
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
     </script>
