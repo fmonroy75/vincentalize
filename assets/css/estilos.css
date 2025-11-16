@@ -74,7 +74,10 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        .hero-logo {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -188,7 +191,16 @@
             margin-right: auto;
             color: #cbd5e0;
         }
-
+        .hero-content img {
+            max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+            height: auto; /* Mantiene la proporción */
+            width: auto; /* Se ajusta al contenido */
+            display: block;
+            margin: 0 auto;
+            
+            /* Tamaños específicos para diferentes dispositivos */
+            max-height: 200px; /* Para móviles */
+        }
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
