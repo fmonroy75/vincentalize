@@ -785,7 +785,7 @@
         .videos-section {
             padding: 4rem 0;
         }
-        
+        /*
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
@@ -806,7 +806,7 @@
             background: var(--accent-color);
             margin: 10px auto;
         }
-        
+        */
         .videos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
