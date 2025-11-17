@@ -843,7 +843,19 @@
         .video-card:hover .video-thumbnail img {
             transform: scale(1.05);
         }
-        
+
+        .youtube-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }        
+        .youtube-link:hover {
+            text-decoration: underline;
+        }
+
         .play-button {
             position: absolute;
             top: 50%;

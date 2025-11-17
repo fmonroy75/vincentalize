@@ -222,7 +222,7 @@
 
 
 <!-- Videos Section -->
-<section class="videos-section">
+<section id="videos-section" class="videos-section">
     <div class="container">
         <div class="section-title">
             <h2>Performances et Clips</h2>
@@ -231,7 +231,7 @@
         <!-- Videos Grid -->
         <div class="videos-grid">
             <!-- Video 1 -->
-            <div class="video-card" data-video-id="ZhwicOSWMqo">
+            <div class="video-card" data-video-id="ZhwicOSWMqo" data-video-title="Nos royaumes interdits">
                 <div class="video-thumbnail">
                     <img src="https://img.youtube.com/vi/ZhwicOSWMqo/maxresdefault.jpg" alt="Vincent Alizé - Nos royaumes interdits">
                     <div class="play-button">
@@ -241,13 +241,14 @@
                 <div class="video-info">
                     <h3>Nos royaumes interdits</h3>
                     <p>Performance live de Vincent Alizé avec le quatuor Esca. Titre phare de l'album éponyme.</p>
+                    <a href="https://youtu.be/ZhwicOSWMqo" class="youtube-link" target="_blank">Voir sur YouTube</a>
                 </div>
             </div>
             
 
             
             <!-- Video 3 -->
-            <div class="video-card" data-video-id="BAMZR9PHd0Y">
+            <div class="video-card" data-video-id="BAMZR9PHd0Y" data-video-title="Performance acoustique">
                 <div class="video-thumbnail">
                     <img src="https://img.youtube.com/vi/BAMZR9PHd0Y/maxresdefault.jpg" alt="Vincent Alizé - Performance acoustique">
                     <div class="play-button">
@@ -257,11 +258,12 @@
                 <div class="video-info">
                     <h3>Performance acoustique</h3>
                     <p>Session studio en formule intimiste avec le violoniste Matti Hanna.</p>
+                    <a href="https://youtu.be/BAMZR9PHd0Y" class="youtube-link" target="_blank">Voir sur YouTube</a>
                 </div>
             </div>
             
             <!-- Video 4 -->
-            <div class="video-card" data-video-id="5ccc0mg_MBw">
+            <div class="video-card" data-video-id="5ccc0mg_MBw" data-video-title="L'ombre des possibles">
                 <div class="video-thumbnail">
                     <img src="https://img.youtube.com/vi/5ccc0mg_MBw/maxresdefault.jpg" alt="Vincent Alizé - L'ombre des possibles">
                     <div class="play-button">
@@ -271,6 +273,7 @@
                 <div class="video-info">
                     <h3>L'ombre des possibles</h3>
                     <p>Deuxième single avec des images tournées en Estrie, terre d'inspiration.</p>
+                    <a href="https://youtu.be/5ccc0mg_MBw" class="youtube-link" target="_blank">Voir sur YouTube</a>
                 </div>
             </div>
         </div>
@@ -362,21 +365,50 @@
         const closeModal = document.getElementById('closeModal');
         const videoContainer = document.getElementById('videoContainer');
         
+        // Lista de videos que sabemos que tienen restricciones
+        const restrictedVideos = [
+            'ZhwicOSWMqo'
+            // Agregar aquí otros IDs de videos con restricciones
+        ];
+        
+        // Función simple para verificar si un video tiene restricciones
+        function isVideoRestricted(videoId) {
+            return restrictedVideos.includes(videoId);
+        }
+        
         // Abrir modal al hacer clic en una miniatura
         videoCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const videoId = card.getAttribute('data-video-id');
-                videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="Video de Vincent Alizé" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-                videoModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Prevenir scroll
+            card.addEventListener('click', function() {
+                const videoId = this.getAttribute('data-video-id');
+                const videoTitle = this.getAttribute('data-video-title');
+                const youtubeUrl = `https://youtu.be/${videoId}`;
+                const isDirectLink = this.hasAttribute('data-direct-link');
+                
+                // Verificar si el video está en nuestra lista de restringidos
+                if (isVideoRestricted(videoId) || isDirectLink) {
+                    // Abrir directamente en YouTube
+                    window.open(youtubeUrl, '_blank');
+                } else {
+                    // Mostrar el video en el modal
+                    videoContainer.innerHTML = `
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                            title="${videoTitle}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    `;
+                    videoModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
             });
         });
         
         // Cerrar modal
         closeModal.addEventListener('click', () => {
             videoModal.style.display = 'none';
-            videoContainer.innerHTML = ''; // Limpiar el iframe
-            document.body.style.overflow = 'auto'; // Restaurar scroll
+            videoContainer.innerHTML = '';
+            document.body.style.overflow = 'auto';
         });
         
         // Cerrar modal al hacer clic fuera del contenido
