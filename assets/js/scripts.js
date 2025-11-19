@@ -8,76 +8,76 @@ const musicData = {
         year: "2021",
         tracks: [
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Notre beau trésor", 
+                duration: "3:31",
+                src:"assets/mp3/NosRoyaumesInterdits/01-Notre-beau-tresor.mp3",
+                lyrics: "On a trouvé un trésor\nQui était là au fond du fjord\nComme la plus belle des histoires\nNotre saison en quatuor\n\nOn l’a ouvert un soir\nSous la pleine lune d’or\nDans nos regards phosphores\nNotre amour, notre étendard\n\nOn brille ensemble\nOn s’invente le monde\nOn trafique les secondes\nComme bon nous semble\n\nOn a grandi sans même le voir\nDans l’infini de nos mémoires\nSur une mélodie pleine d’espoir\nNotre symphonie sans auditoire\n\nAvant de partir avec la mort\nOn se souderait les os du corps\nOn se ferait l’amour jusqu’à l’aurore\nOn se souvient notre beau trésor\n\nOn brille ensemble\nOn s’invente le monde\nOn trafique les secondes\nComme bon nous semble"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Ma météore", 
+                duration: "5:13",
+                src:"assets/mp3/NosRoyaumesInterdits/02-Ma-meteore.mp3",
+                lyrics: "Ce soir, j’ai vu la lune\nBriller dans tes yeux\nL’amour me prendre au cœur\nComme un feu\n\nLa nuit était si belle\nOu c’était toi mon septième ciel\nNovembre vermeil\nDans la nuit de tes merveilles\n\nJe t’aime si fort\n\nUn jour je te dirai\nCe monde qui a grandi en moi\nCette lumière que j’ai trouvée en toi\n\nCette lumière\n\nIci, sans toi, dans le noir\nJe rêve de toi, ma météore\n\nJe t’aime si fort\n\nUn jour je te dirai\nCe monde qui a grandi en moi\nCette lumière que j’ai trouvée en toi\n\nCette lumière"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Les nuits incandescentes", 
+                duration: "4:08",
+                src:"assets/mp3/NosRoyaumesInterdits/03-Les-nuits-incandescentes.mp3",
+                lyrics: "Dehors, il fait si froid\nDes corps volent en éclats\nEncore quelque part\nL’aurore reviendra\n\nEnsemble nous éclairons le monde\nMême si ce n’est que pour une seule seconde\nRêvant, nous écrivons les jours\nEt les nuits incandescentes\n\nDevant nous, juste là\nEt pourtant on ne le voit pas\nL’amour éteint les feux de l’enfer\nQui brulent en nous\n\nComment tout dire à la fois\nQuand je n’ai qu’une seule voix\nL’amour éteint les feux de l’enfer\nQui brulent en nous\n\nEnsemble nous éclairons le monde\nMême si ce n’est que pour une seule seconde\nRêvant, nous écrivons les jours\nEt les nuits incandescentes"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Là où l’air est si léger", 
+                duration: "4:28",
+                src:"assets/mp3/NosRoyaumesInterdits/04-La-ou-lair-est-si-leger.mp3",
+                lyrics: "Demain, j’irai\nSans trop chercher\nEnfin libéré\nDes murs du passé\n\nLà où l’air est si léger\nPar le vent porté\nLà où l’air est si léger\nPar le vent porté\n\nAu matin, je naitrai\nNos printemps chantés\nLe refrain, ta beauté\nLe cœur soulevé\n\nLà où l’air est si léger\nPar le vent porté\nLà où l’air est si léger\nPar le vent porté\n\nAu bout du monde\nIci, des voix célestes\nS’élèvent dans une symphonie\nUn nouveau jour se lève\nSur le long brouillard\nDe trop de décennies\nÀ s’arracher la chair\nLa lueur de la vie qui scintille\nAu fond des yeux noircis"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Dans tes bras", 
+                duration: "4:00",
+                src:"assets/mp3/NosRoyaumesInterdits/05-Dans-tes-bras.mp3",
+                lyrics: "Ici, d’aussi loin, d’où je viens\nJ’ai suivi mon cœur, mon chemin\nMa vie a grandi dans tes mains\nUne lueur, encore, brille ce matin\n\nEt même s’il y a la pluie\nLe vent qui parle aux ouragans\nLa terre qui tremble et rugit\nDans les entrailles des volcans\nLe silence qui précède le tsunami\nJe resterai là blotti dans tes bras\n\nDepuis ce jour, aujourd’hui\nDepuis le ciel s’est éclairci\nTu es la seule étoile de mes nuits\nEt mon rêve est devenu galaxie\n\nEt même s’il y a la pluie\nLe vent qui parle aux ouragans\nLa terre qui tremble et rugit\nDans les entrailles des volcans\nJe resterai là blotti dans tes bras"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Selsila", 
+                duration: "4:09",
+                src:"assets/mp3/NosRoyaumesInterdits/06-Selsila.mp3",
+                lyrics: "Une seule lueur\nDans la noirceur\nVeille sur mon cœur\nTa lumière\n\nNos vies en fleurs\nFresque de couleurs\nReine des rivières\nToi, ma lumière\n\nSelsila\n\nTes bras foliaires\nTes pôles lunaires\nÉquilibrent ma terre\nToi, ma lumière\n\nTes yeux m’éclairent\nMe font voir l’univers\nLe plus grand, le plus beau\nLe plus vrai, le plus merveilleux\nMoi, je rêve de nous deux\n\nSelsila\n\nTu as dû fuir\nUn monde en guerre\nAvec ton amour\nTa lumière\n\nUne étoile si belle\nComme éternelle\nElle me fait croire qu’un jour\nNous pourrions briller ensemble\nDans l’universel\n\nSelsila\n\nComme une lueur\nDans la noirceur\nVeille sur mon cœur\nTa lumière"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Aujourd’hui", 
+                duration: "6:14",
+                src:"assets/mp3/NosRoyaumesInterdits/07-Aujourdhui.mp3",
+                lyrics: "Tu es maintenant partie\nComme le soleil, la nuit\nDans un éclair, ébloui\nEt le tonnerre, mon cri\n\nTu es encore ici\nTu es toute ma vie\nUne seconde, l’infini\nEt sombrons dans l’oubli\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nL’étranger que je suis\nAujourd’hui\n\nTu es ma belle noirceur\nLe grand vide des heures\nMon vertige des grandeurs\nL’inconnu, la peur\n\nTu n’es plus qu’une abstraction\nL’hologramme de mes fictions\nDans un monde de fraction\nOù je perds la raison\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nL’étranger que je suis\nAujourd’hui"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Ce qu’il reste de moi", 
+                duration: "4:31",
+                src:"assets/mp3/NosRoyaumesInterdits/08-Ce-quil-reste-de-moi.mp3",
+                lyrics: "J’ai le cœur à l’est\nL’amour céleste\nL’encre et les racines\nDans la ceinture de feu\n\nJ’ai la soif du pacifique\nMon rêve idyllique\nCoule sur tes obliques\nTon corps est une île volcanique\n\nMon ciel sans étoiles\nSe rallume pour faire briller\nCette lueur au fond de tes yeux\n\nCe qu’il reste de moi\n\nJ’ai la flamme, l’ivresse\nPour ma seule déesse\nLes champs de l’Indochine\nOù des milliers de lucioles s’illuminent\n\nJ’ai la soif du pacifique\nMon rêve idyllique\nCoule sur tes obliques\nTon corps est une île volcanique\n\nMon ciel sans étoiles\nSe rallume pour faire briller\nCette lueur au fond de tes yeux\n\nCe qu’il reste de moi"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Pour cette fois", 
+                duration: "4:18",
+                src:"assets/mp3/NosRoyaumesInterdits/09-Pour-cette-fois.mp3",
+                lyrics: "On tient la vie\nAu bout des doigts\nSi fragile, elle fuit\nSi on ne la retient pas\n\nOn rit, on pleure\nPour cette fois\nOn vit, on meurt\nUne autre fois\n\nOn écoute la pluie\nCourir sur les toits\nTout s’arrête ici\nLe temps passe pour cette fois\n\nOn rit, on pleure\nPour cette fois\nOn vit, on meurt\nUne autre fois\n\nDes âmes qui incarnent l'émergence\nD’un monde en pleine renaissance\n\nPeu importe combien de missiles\nTombent sur nos têtes\nNos cœurs s’enracinent plus fort\nLes fleurs repoussent même dans la mort\nLa paix gagne toujours contre la violence\nNos cœurs s’enracinent plus fort\nLes fleurs repoussent même dans la mort"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Quelques lueurs", 
+                duration: "4:00",
+                src:"assets/mp3/NosRoyaumesInterdits/10-Quelques-lueurs.mp3",
+                lyrics: "Un vieil homme\nPorte le monde\nÀ bout de bras\n\nEt comme une ombre\nDe plus en plus longue\nIl étire le pas\n\nDes yeux brillent à travers la noirceur\nDes lieux où s’inventer quelques lueurs\nDes feux pour se tenir loin des enfers\nLoin des grands froids de l’hiver\n\nUne vieille femme\nBerce le monde\nAu creux du bras\n\nComme un enfant\nSe sentir si grand\nÀ l’écart du temps\n\nDes yeux brillent à travers la noirceur\nDes lieux où s’inventer quelques lueurs\nDes feux pour se tenir loin des enfers\nLoin des grands froids de l’hiver"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Notre terre qui était", 
+                duration: "5:57",
+                src:"assets/mp3/NosRoyaumesInterdits/11-Notre-terre-qui-etait.mp3",
+                lyrics: "Sorti d’un rêve où tout était parfait\nLes couleurs se mêlaient à la lumière\nL’amour se croyait pour l’univers\n\nÀ l’abri des jours sans l’ombre d’un reflet\nMême la noirceur brillait au fond de tes yeux\nUn soleil se levait sur notre terre qui était\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nJ’ai grandi dans tes bras\nComme un arbre à la fois\nMa forêt sacrée, mon palais\nDe fougères et de fleurs\nQui suivaient nos pas\n\nJ’ai vieilli soudain\nLa seconde de ma vie\nPassée en une seule nuit\nSans faire de bruit\nLes yeux tournés vers toi\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur est de poussière\nS’allongent mes déserts"
             },
             { 
-                title: "xxxx", 
-                duration: "3:45",
-                src:"assets/mp3/beep.mp3",
-                lyrics: "xxxx"
+                title: "Mon rêve est à toi", 
+                duration: "4:45",
+                src:"assets/mp3/NosRoyaumesInterdits/12-Mon-reve-est-a-toi.mp3",
+                lyrics: "Ce rêve se vit pour l’éternité\nSur terre s’écrit ce jour de liberté\n\nEmmène-moi au bout\nDes lignes et lois, de nous\nEnracine-moi au cœur\nDes forêts de verglas\nMon rêve est à toi\n\nMon rêve est à toi\nMon rêve est à toi\nMon rêve est à toi\nMon rêve est à toi\n\nCe rêve se vit pour l’éternité\nSur terre s’écrit ce jour de liberté\n\nEmmène-moi au bout\nDes lignes et lois, de nous\nEnracine-moi au cœur\nDes forêts de verglas\nMon rêve est à toi\n\nMon rêve est à toi\nMon rêve est à toi\nMon rêve est à toi\nMon rêve est à toi"
             },
         ]
     },
