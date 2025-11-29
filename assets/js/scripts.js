@@ -306,7 +306,7 @@ lyricsIcon.classList.toggle('fa-chevron-up');
 });
 
 // Cargar álbum inicial CORREGIDO
-selectAlbum('royaumes_album');
+//selectAlbum('royaumes_album');
 
 // Configurar volumen inicial
 audio.volume = volumeSlider.value / 100;
@@ -314,82 +314,152 @@ audio.volume = volumeSlider.value / 100;
 
 // Funciones del reproductor
 function selectAlbum(albumKey) {
-// Actualizar selector de álbum
-albumOptions.forEach(option => {
-if (option.getAttribute('data-album') === albumKey) {
-    option.classList.add('active');
-} else {
-    option.classList.remove('active');
-}
-});
+    // Actualizar selector de álbum
+    albumOptions.forEach(option => {
+    if (option.getAttribute('data-album') === albumKey) {
+        option.classList.add('active');
+    } else {
+        option.classList.remove('active');
+    }
+    // Desplazar al reproductor
+    //document.getElementById('player-body').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('track-selector').scrollIntoView({ behavior: 'smooth' });
+    });
 
-currentAlbum = albumKey;
-currentTrackIndex = 0;
+    currentAlbum = albumKey;
+    currentTrackIndex = 0;
 
-// Actualizar información del álbum
-const album = musicData[albumKey];
-nowPlayingImage.src = album.image;
-nowPlayingAlbum.textContent = `${album.title} (${album.year})`;
+    // Actualizar información del álbum
+    const album = musicData[albumKey];
+    nowPlayingImage.src = album.image;
+    nowPlayingAlbum.textContent = `${album.title} (${album.year})`;
 
-// Generar lista de pistas
-trackSelector.innerHTML = '';
-album.tracks.forEach((track, index) => {
-const trackOption = document.createElement('div');
-trackOption.className = 'track-option';
-if (index === currentTrackIndex) {
-    trackOption.classList.add('active');
-}
-trackOption.innerHTML = `
-    <div class="track-number">${index + 1}</div>
-    <div class="track-info">
-        <div class="track-title">${track.title}</div>
-        <div class="track-duration">${track.duration}</div>
-    </div>
-`;
-trackOption.addEventListener('click', () => {
-    selectTrack(index);
-});
-trackSelector.appendChild(trackOption);
-});
+    // Generar lista de pistas
+    trackSelector.innerHTML = '';
+    album.tracks.forEach((track, index) => {
+    const trackOption = document.createElement('div');
+    trackOption.className = 'track-option';
+    if (index === currentTrackIndex) {
+        trackOption.classList.add('active');
+    }
+    trackOption.innerHTML = `
+        <div class="track-number">${index + 1}</div>
+        <div class="track-info">
+            <div class="track-title">${track.title}</div>
+            <div class="track-duration">${track.duration}</div>
+        </div>
+    `;
+    trackOption.addEventListener('click', () => {
+        selectTrack(index,true);
+    });
+    trackSelector.appendChild(trackOption);
+    });
 
-// Cargar primera pista
-selectTrack(0);
-}
+    // Cargar primera pista
+    selectTrack(0,false);
 
-function selectTrack(index) {
-// Pausar audio actual si está reproduciendo
-if (isPlaying) {
-audio.pause();
-isPlaying = false;
-playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+
 }
 
-// Actualizar selector de pistas
-document.querySelectorAll('.track-option').forEach((option, i) => {
-if (i === index) {
-    option.classList.add('active');
-} else {
-    option.classList.remove('active');
+// Función para inicializar sin scroll
+function initializePage() {
+    // Cargar primer álbum sin hacer scroll
+    currentAlbum = 0;
+    currentTrackIndex = 0;
+    
+    // Actualizar selector de álbumes
+    document.querySelectorAll('.album-option').forEach((option, i) => {
+        if (i === currentAlbum) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
+        }
+    });
+    
+    // Generar lista de pistas SIN hacer scroll
+    const album = musicData[currentAlbum];
+    const trackSelector = document.getElementById('track-selector');
+    
+    trackSelector.innerHTML = '';
+    album.tracks.forEach((track, index) => {
+        const trackOption = document.createElement('div');
+        trackOption.className = 'track-option';
+        if (index === currentTrackIndex) {
+            trackOption.classList.add('active');
+        }
+        trackOption.innerHTML = `
+            <div class="track-number">${index + 1}</div>
+            <div class="track-info">
+                <div class="track-title">${track.title}</div>
+                <div class="track-duration">${track.duration}</div>
+            </div>
+        `;
+        trackOption.addEventListener('click', () => {
+            selectTrack(index, true); // TRUE = viene de click en pista
+        });
+        trackSelector.appendChild(trackOption);
+    });
+    
+    // Cargar primera pista SIN desplazar
+    selectTrack(0, false); // FALSE = carga inicial, sin scroll
 }
-});
 
-currentTrackIndex = index;
-const track = musicData[currentAlbum].tracks[index];
+function selectTrack(index, scrollToPlayer = false) {
+    // Pausar audio actual si está reproduciendo
+    if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
 
-// Actualizar información de reproducción
-nowPlayingTitle.textContent = track.title;
-lyricsText.textContent = track.lyrics || "No hay letra disponible para esta canción";
+    // Actualizar selector de pistas
+    document.querySelectorAll('.track-option').forEach((option, i) => {
+    if (i === index) {
+        option.classList.add('active');
+    } else {
+        option.classList.remove('active');
+    }
+    });
 
-// Reiniciar progreso
-progress.style.width = '0%';
-currentTimeEl.textContent = '0:00';
-durationEl.textContent = track.duration;
+    currentTrackIndex = index;
+    const track = musicData[currentAlbum].tracks[index];
 
-// Cargar el audio
-audio.src = track.src;
-audio.load();
+    // Actualizar información de reproducción
+    nowPlayingTitle.textContent = track.title;
+    lyricsText.textContent = track.lyrics || "No hay letra disponible para esta canción";
 
-console.log(`Cargando: ${track.src}`); // Para debugging
+    // Reiniciar progreso
+    progress.style.width = '0%';
+    currentTimeEl.textContent = '0:00';
+    durationEl.textContent = track.duration;
+
+    // Cargar el audio
+    audio.src = track.src;
+    audio.load();
+
+    console.log(`Cargando: ${track.src}`); // Para debugging
+    // Desplazar al reproductor
+    //document.getElementById('track-selector').scrollIntoView({ behavior: 'smooth' });
+    // Desplazar al reproductor
+    //document.getElementById('player-body').scrollIntoView({ behavior: 'smooth' });
+    // Desplazar al reproductor
+        // DESPLAZAR AL REPRODUCTOR - SOLO SE EJECUTA AL HACER CLICK
+    // SOLO desplazar al reproductor si viene de click en pista
+    // SOLO desplazar al reproductor si viene de click en pista
+    console.log(scrollToPlayer);
+    if (scrollToPlayer) {
+        //setTimeout(() => {
+            const playerBody = document.getElementById('player-body');
+            if (playerBody) {
+                playerBody.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                console.error('Elemento player-body no encontrado');
+            }
+    // }, 100);
+    }
 }
 
 function togglePlayPause() {
@@ -472,3 +542,9 @@ const mins = Math.floor(seconds / 60);
 const secs = Math.floor(seconds % 60);
 return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 }
+
+
+// Inicializar la página cuando se carga
+document.addEventListener('DOMContentLoaded', function() {
+    initializePage();
+});
