@@ -1,0 +1,20 @@
+User-agent: *
+
+# Allow important resources for rendering
+
+Allow: /assets/css/
+Allow: /assets/img/
+
+# Block private or unnecessary directories
+
+Disallow: /assets/mp3/
+Disallow: /private/
+Disallow: /tmp/
+
+# Crawl delay for polite bots (optional)
+
+Crawl-delay: 5
+
+# Sitemap location
+
+Sitemap: https://www.vincentalize.ca/sitemap.xml
