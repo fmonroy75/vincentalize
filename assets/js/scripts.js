@@ -89,7 +89,7 @@ const musicData = {
             { 
                 title: "Nos royaumes interdits (single)", 
                 duration: "3:56",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/Nosroyaumes/Nosroyaumesinterdits.mp3",
                 lyrics: "Comme deux étoiles filantes\nQui déchirent la noirceur de la nuit\nÀ la croisée des mondes\nNos royaumes interdits\n\nJ’ai rêvé de nos jours\nDe nos nuits, nos fantaisies\nJ’ai rêvé de notre amour\nDans une autre vie\n\nNous sommes les héros d’une tragédie\nDont tout le monde sait\ncomment ça finit\nDans le vin et le sang, on célébrera notre mort\nOn brûlera toutes les pages de notre histoire\nIl ne restera plus rien de nous que l’oubli\n\nNos royaumes interdits\n\nJ’ai rêvé de nos jours\nDe nos nuits, nos fantaisies\nJ’ai rêvé de notre amour\nDans une autre vie\n\nNos royaumes interdits"
             },
         ]
@@ -102,7 +102,7 @@ const musicData = {
             { 
                 title: "Ma météore", 
                 duration: "5:51",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/meteore/Ma_meteore.mp3",
                 lyrics: ""
             },
         ]
@@ -115,7 +115,7 @@ const musicData = {
             { 
                 title: "Dans tes bras", 
                 duration: "4:17",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/danstesbras/Danstesbras.mp3",
                 lyrics: ""
             },
         ]
@@ -128,7 +128,7 @@ const musicData = {
             { 
                 title: "Aujourd'hui", 
                 duration: "6:17",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/Aujourdhui/Aujourdhui.mp3",
                 lyrics: "Tu es maintenant partie\nComme le soleil, la nuit\nDans un éclair, ébloui\nEt le tonnerre, mon cri\n\nTu es encore ici\nTu es toute ma vie\nUne seconde, l’infini\nEt sombrons dans l’oubli\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nL’étranger que je suis\nAujourd’hui\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nLe brasier que je fuis\nAujourd’hui\n\nTu es ma belle noirceur\nLe grand vide des heures\nMon vertige des grandeurs\nL’inconnu, la peur\n\nTu n’es plus qu’une abstraction\nL’hologramme de mes fictions\nDans un monde de fractions\nOù je perds la raison\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nL’étranger que je suis\nAujourd’hui\n\nTu es mon désert, ma pluie\nMon cœur, un incendie\nLe brasier que je fuis\nAujourd’hui"
             },
         ]
@@ -141,7 +141,7 @@ const musicData = {
             { 
                 title: "Notre terre qui était", 
                 duration: "5:59",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/notre/Notre_terre_qui_etait.mp3",
                 lyrics: "Voix et guitare : Vincent Alizé\nPiano: Jean-François Racine\nDrum: Rafael Poggetti\nVioloncelle: Marie-Philippe Lemay\n\nRéalisation musicale: Luc Boivin et Vincent Alizé au studio Redtube\nMixage: Luc Boivin\nMastering: Yannick St-Amand\nMaison de disque: Les Disques Inconnu\nparoles\nSorti d’un rêve où tout était parfait\nLes couleurs se mêlaient à la lumière\nL’amour se croyait pour l’univers\n\nÀ l’abri des jours sans l’ombre d’un reflet\nMême la noirceur brillait au fond de tes yeux\nUn soleil se levait sur notre terre qui était\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nJ’ai grandi dans tes bras\nComme un arbre à la fois\nMa foret sacrée, mon palais\nDe fougères et de fleurs\nQui suivaient nos pas\n\nJ’ai vieilli soudain\nLa seconde de ma vie\nPassée en une seule nuit\nSans faire de bruit\nLes yeux tournés vers toi\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur est de poussière\nS’allongent mes déserts"
             },
         ]
@@ -154,13 +154,13 @@ const musicData = {
             { 
                 title: "Quelques lueurs", 
                 duration: "3:58",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/Deuxsouffles/Quelques_lueurs.mp3",
                 lyrics: ""
             },
             { 
                 title: "Nous reviendrons", 
                 duration: "3:43",
-                src:"assets/mp3/beep.mp3",
+                src:"assets/mp3/Deuxsouffles/Nous_reviendrons.mp3",
                 lyrics: ""
             },
         ]
@@ -533,7 +533,7 @@ const duration = audio.duration;
 if (duration && !isNaN(duration)) {
 audio.currentTime = (clickX / width) * duration;
 }
-}
+} 
 
 function formatTime(seconds) {
 if (isNaN(seconds)) return '0:00';

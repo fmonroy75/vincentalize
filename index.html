@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincentalize - Une musique folk-orchestrale entre ombre et lumière</title>
-    <meta name="description" content="Vincent Alizé, ancien chanteur et compositeur de NOEM, présente son nouveau projet solo. Découvrez sa musique folk-orchestrale unique, entre ombre et lumière.">
-    <meta name="author" content="Francisco Monroy">
+    <title>Vincent Alizé (Vincent Vachon) | Vincentalize — musique folk-orchestrale au Québec</title>
+    <meta name="description" content="Site officiel de Vincent Alizé, projet Vincentalize de l'artiste Vincent Vachon. Ancien chanteur de NOEM : musique folk-orchestrale, albums et spectacles au Québec.">
+    <meta name="author" content="Vincent Alizé">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="canonical" href="https://www.vincentalize.ca/">
     
     <!-- Meta Tags Open Graph para redes sociales -->
-    <meta property="og:title" content="Vincent Alizé - Musique folk-orchestrale entre ombre et lumière">
-    <meta property="og:description" content="Découvrez le nouveau projet solo de Vincent Alizé, ancien chanteur et compositeur de NOEM. Musique authentique et évocatrice.">
+    <meta property="og:title" content="Vincent Alizé (Vincent Vachon) | Vincentalize">
+    <meta property="og:description" content="Vincent Vachon, sous le nom d'artiste Vincent Alizé et le projet Vincentalize. Musique folk-orchestrale québécoise, ancien chanteur de NOEM.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.vincentalize.ca/">
     <meta property="og:image" content="https://www.vincentalize.ca/assets/img/social-preview-vincentalize-og.png">
@@ -22,13 +22,12 @@
     
     <!-- Meta Tags para Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vincent Alizé - Musique folk-orchestrale">
-    <meta name="twitter:description" content="Nouveau projet solo de l'ancien chanteur de NOEM. Découvrez l'album maintenant disponible.">
+    <meta name="twitter:title" content="Vincent Alizé (Vincent Vachon) | Vincentalize">
+    <meta name="twitter:description" content="Vincent Vachon — Vincent Alizé, projet Vincentalize. Musique folk-orchestrale au Québec, ancien de NOEM.">
     <!--<meta name="twitter:image" content="https://www.vincentalize.com/images/vincent-alize-twitter.jpg">-->
     
     <!-- Meta Tags adicionales para SEO -->
-    <meta name="keywords" content="Vincent Alizé, musique québécoise, folk orchestral, NOEM, album solo, musique Estrie, auteur-compositeur">
-    <meta name="author" content="Vincent Alizé">
+    <meta name="keywords" content="Vincent Alizé, Vincent Vachon, Vincentalize, musique québécoise, folk orchestral, NOEM, album solo, musique Estrie, Sherbrooke, auteur-compositeur-interprète">
     
     <!-- Enlaces a hreflang si tienes versiones en otros idiomas -->
     <link rel="alternate" hreflang="fr-CA" href="https://www.vincentalize.ca/" />
@@ -68,18 +67,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      "name": "Vincent Alizé",
-      "description": "Artiste musical québécois spécialisé dans la musique folk-orchestrale",
-      "url": "https://www.vincentalize.ca/",
-      "genre": ["Folk", "Musique orchestrale", "Musique québécoise"],
-      "image": "assets/img/vincent-alize.jpg",
-      "sameAs": [
-        "https://www.facebook.com/vincentalize1",
-        "https://dansnoslaurentides.com/actualites/musique/vincent-alize",
-        "https://www.youtube.com/channel/UCOFgQLNSwrRzIJwKhO6EQEw"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Vincentalize",
+          "alternateName": "Vincent Alizé",
+          "url": "https://www.vincentalize.ca/",
+          "inLanguage": "fr-CA",
+          "description": "Site officiel du projet Vincentalize de Vincent Alizé (Vincent Vachon)."
+        },
+        {
+          "@type": "Person",
+          "name": "Vincent Alizé",
+          "givenName": "Vincent",
+          "familyName": "Vachon",
+          "alternateName": ["Vincentalize", "Vincent Vachon"],
+          "jobTitle": "Auteur-compositeur-interprète",
+          "description": "Artiste musical québécois (Vincent Vachon), connu sous le nom de scène Vincent Alizé et le projet Vincentalize. Musique folk-orchestrale.",
+          "url": "https://www.vincentalize.ca/",
+          "image": "https://www.vincentalize.ca/assets/img/vincent_alize.jpg",
+          "homeLocation": {
+            "@type": "Place",
+            "name": "Sherbrooke, Québec, Canada"
+          },
+          "knowsAbout": ["Musique folk-orchestrale", "Musique québécoise", "NOEM"],
+          "sameAs": [
+            "https://www.facebook.com/vincentalize1",
+            "https://vincentalize.bandcamp.com",
+            "https://dansnoslaurentides.com/actualites/musique/vincent-alize",
+            "https://www.youtube.com/channel/UCOFgQLNSwrRzIJwKhO6EQEw"
+          ]
+        }
       ]
-    }   
+    }
     </script>
 </head>
 <body>
@@ -90,7 +110,7 @@
                 <a href="#inicio" class="logo">
                     <!--<i class="fas fa-headphones"></i>
                     < Vincent Alizé-->
-                    <img src="assets/img/vincent.png" class="hero-logo" alt="viventalize">
+                    <img src="assets/img/vincent.png" class="hero-logo" alt="Vincentalize — Vincent Alizé (Vincent Vachon)">
                 </a>
                 <ul class="nav-links">
                     <li><a href="#inicio">Accueil</a></li>
@@ -110,11 +130,19 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <img
+            src="assets/img/Foret_Nuits_Incandescentes.jpg"
+            class="hero-image"
+            alt="Vincent Alizé (Vincent Vachon) — projet Vincentalize, illustration Forêt aux nuits incandescentes"
+            width="1400"
+            height="540"
+            fetchpriority="high"
+            decoding="async"
+        >
         <div class="container">
             <div class="hero-content">
-                <!--<h1><img src="assets/img/vincent.png" class="hero-logo" alt="viventalize"></h1>-->
-                
-                <a href="#musica" alt ="Découvre-moi" class="btn">Découvrez ma musique</a>
+                <h1 class="visually-hidden">Vincent Alizé — Vincentalize (Vincent Vachon), musique folk-orchestrale</h1>
+                <a href="#musica" class="btn">Découvrez ma musique</a>
             </div>
         </div>
     </section>
@@ -127,11 +155,11 @@
             </div>
             <div class="about-content fade-in">
                 <div class="about-image">
-                    <img src="assets/img/vincent_alize.jpg" alt="Vincent Alize - Musicien">
+                    <img src="assets/img/vincent_alize.jpg" alt="Vincent Alizé (Vincent Vachon), auteur-compositeur Vincentalize">
                 </div>
                 <div class="about-text">
-                    <h3>Vincent Alizé</h3>
-                    <p><span class="highlight">Vincent Alizé</span> révèle une musique <span class="highlight">folk-orchestrale</span> empreinte de douceur et d’intensité. Après avoir dévoilé un <span class="highlight">mini-album (Deux souffles, 2018)</span> et quelques singles, l’auteur-compositeur-interprète à la voix brumeuse a lancé son premier album, <span class="highlight">Nos royaumes interdits</span>, en 2021. Sur scène, il mêle son univers aux cordes du quatuor Esca et, dans une formule intime, à celles du violoniste <span class="highlight">Matti Hanna.</span> Vincent Alizé propose un voyage musical à la fois envoûtant et émouvant. D’une pièce à l’autre, on découvre le spectre de sa musique comme si l’on regardait à travers un télescope à la recherche du merveilleux. </p>
+                    <h3>Vincent Alizé <span class="artist-legal-name">(Vincent Vachon)</span></h3>
+                    <p><span class="highlight">Vincent Vachon</span>, connu sous le nom d'artiste <span class="highlight">Vincent Alizé</span> et le projet <span class="highlight">Vincentalize</span>, révèle une musique <span class="highlight">folk-orchestrale</span> empreinte de douceur et d’intensité. Après avoir dévoilé un <span class="highlight">mini-album (Deux souffles, 2018)</span> et quelques singles, l’auteur-compositeur-interprète à la voix brumeuse a lancé son premier album, <span class="highlight">Nos royaumes interdits</span>, en 2021. Sur scène, il mêle son univers aux cordes du quatuor Esca et, dans une formule intime, à celles du violoniste <span class="highlight">Matti Hanna.</span> Vincent Alizé propose un voyage musical à la fois envoûtant et émouvant. D’une pièce à l’autre, on découvre le spectre de sa musique comme si l’on regardait à travers un télescope à la recherche du merveilleux. </p>
 
                       <a href="https://vincentalize.bandcamp.com" target="_blank" class="btn" alt="bandcamp">Explorer sur Bandcamp</a>
                 </div>
@@ -318,7 +346,7 @@
             </div>
             <div class="contact-content fade-in">
                 <div class="contact-info">
-                    <h3>Connecte-toi avec Vincent Alizé</h3>
+                    <h3>Connecte-toi avec Vincent Alizé (Vincent Vachon)</h3>
                     <div class="contact-details">
                         <div class="contact-detail">
                             <i class="fas fa-envelope"></i>
