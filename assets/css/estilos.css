@@ -624,21 +624,24 @@
         .lyrics-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease;
+            transition: max-height 0.45s ease;
             background: rgba(13, 20, 36, 0.5);
             border-radius: 8px;
             padding: 0 1rem;
         }
 
         .lyrics-content.active {
-            max-height: 300px;
             padding: 1rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
 
         .lyrics {
             white-space: pre-line;
             line-height: 1.8;
             color: #cbd5e0;
+            overflow-wrap: anywhere;
         }
 
         /* Contacto */

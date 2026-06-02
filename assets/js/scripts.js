@@ -103,7 +103,7 @@ const musicData = {
                 title: "Ma météore", 
                 duration: "5:51",
                 src:"assets/mp3/meteore/Ma_meteore.mp3",
-                lyrics: ""
+                lyrics: "Ce soir, j’ai vu la lune\nBriller dans tes yeux\nL’amour me prendre au cœur\nComme un feu\n\nLa nuit était si belle\nOu c’était toi mon septième ciel\nNovembre vermeil\nDans la nuit de tes merveilles\n\nJe t’aime si fort\n\nUn jour je te dirai\nCe monde qui a grandi en moi\nCette lumière que j’ai trouvée en toi\n\nCette lumière\n\nIci, sans toi, dans le noir\nJe rêve de toi, ma météore\n\nJe t’aime si fort\n\nUn jour je te dirai\nCe monde qui a grandi en moi\nCette lumière que j’ai trouvée en toi\n\nCette lumière"
             },
         ]
     },
@@ -116,7 +116,7 @@ const musicData = {
                 title: "Dans tes bras", 
                 duration: "4:17",
                 src:"assets/mp3/danstesbras/Danstesbras.mp3",
-                lyrics: ""
+                lyrics: "Ici, d’aussi loin, d’où je viens\nJ’ai suivi mon cœur, mon chemin\nMa vie a grandi dans tes mains\nUne lueur, encore, brille ce matin\n\nEt même s’il y a la pluie\nLe vent qui parle aux ouragans\nLa terre qui tremble et rugit\nDans les entrailles des volcans\nLe silence qui précède le tsunami\nJe resterai là blotti dans tes bras\n\nDepuis ce jour, aujourd’hui\nDepuis le ciel s’est éclairci\nTu es la seule étoile de mes nuits\nEt mon rêve est devenu galaxie\n\nEt même s’il y a la pluie\nLe vent qui parle aux ouragans\nLa terre qui tremble et rugit\nDans les entrailles des volcans\nJe resterai là blotti dans tes bras"
             },
         ]
     },
@@ -142,7 +142,7 @@ const musicData = {
                 title: "Notre terre qui était", 
                 duration: "5:59",
                 src:"assets/mp3/notre/Notre_terre_qui_etait.mp3",
-                lyrics: "Voix et guitare : Vincent Alizé\nPiano: Jean-François Racine\nDrum: Rafael Poggetti\nVioloncelle: Marie-Philippe Lemay\n\nRéalisation musicale: Luc Boivin et Vincent Alizé au studio Redtube\nMixage: Luc Boivin\nMastering: Yannick St-Amand\nMaison de disque: Les Disques Inconnu\nparoles\nSorti d’un rêve où tout était parfait\nLes couleurs se mêlaient à la lumière\nL’amour se croyait pour l’univers\n\nÀ l’abri des jours sans l’ombre d’un reflet\nMême la noirceur brillait au fond de tes yeux\nUn soleil se levait sur notre terre qui était\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nJ’ai grandi dans tes bras\nComme un arbre à la fois\nMa foret sacrée, mon palais\nDe fougères et de fleurs\nQui suivaient nos pas\n\nJ’ai vieilli soudain\nLa seconde de ma vie\nPassée en une seule nuit\nSans faire de bruit\nLes yeux tournés vers toi\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur est de poussière\nS’allongent mes déserts"
+                lyrics: "Sorti d’un rêve où tout était parfait\nLes couleurs se mêlaient à la lumière\nL’amour se croyait pour l’univers\n\nÀ l’abri des jours sans l’ombre d’un reflet\nMême la noirceur brillait au fond de tes yeux\nUn soleil se levait sur notre terre qui était\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nJ’ai grandi dans tes bras\nComme un arbre à la fois\nMa foret sacrée, mon palais\nDe fougères et de fleurs\nQui suivaient nos pas\n\nJ’ai vieilli soudain\nLa seconde de ma vie\nPassée en une seule nuit\nSans faire de bruit\nLes yeux tournés vers toi\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur et des poussières\nS’allongent mes déserts\n\nMon monde est à l’envers\nJe retombe sur terre\nMon cœur est de poussière\nS’allongent mes déserts"
             },
         ]
     },
@@ -155,7 +155,7 @@ const musicData = {
                 title: "Quelques lueurs", 
                 duration: "3:58",
                 src:"assets/mp3/Deuxsouffles/Quelques_lueurs.mp3",
-                lyrics: ""
+                lyrics: "Un vieil homme\nPorte le monde\nÀ bout de bras\n\nEt comme une ombre\nDe plus en plus longue\nIl étire le pas\n\nDes yeux brillent à travers la noirceur\nDes lieux où s’inventer quelques lueurs\nDes feux pour se tenir loin des enfers\nLoin des grands froids de l’hiver\n\nUne vieille femme\nBerce le monde\nAu creux du bras\n\nComme un enfant\nSe sentir si grand\nÀ l’écart du temps\n\nDes yeux brillent à travers la noirceur\nDes lieux où s’inventer quelques lueurs\nDes feux pour se tenir loin des enfers\nLoin des grands froids de l’hiver"
             },
             { 
                 title: "Nous reviendrons", 
@@ -190,6 +190,30 @@ const lyricsToggle = document.getElementById('lyricsToggle');
 const lyricsContent = document.getElementById('lyricsContent');
 const lyricsText = document.getElementById('lyricsText');
 const lyricsIcon = document.getElementById('lyricsIcon');
+
+function updateLyricsPanelHeight() {
+    if (!lyricsContent || !lyricsText) return;
+
+    if (lyricsContent.classList.contains('active')) {
+        const maxViewport = Math.round(window.innerHeight * 0.65);
+        const contentHeight = lyricsText.scrollHeight + 32;
+        const panelHeight = Math.min(contentHeight, maxViewport);
+        lyricsContent.style.maxHeight = panelHeight + 'px';
+        lyricsContent.style.overflowY = contentHeight > maxViewport ? 'auto' : 'hidden';
+    } else {
+        lyricsContent.style.maxHeight = '0';
+        lyricsContent.style.overflowY = 'hidden';
+    }
+}
+
+function setLyricsDisplay(lyrics) {
+    if (!lyricsText) return;
+    const text = (lyrics || '').trim();
+    lyricsText.textContent = text || "Paroles non disponibles pour cette chanson.";
+    if (lyricsContent && lyricsContent.classList.contains('active')) {
+        requestAnimationFrame(updateLyricsPanelHeight);
+    }
+}
 
 // AÑADIR ESTO AL HTML o crear el control de volumen dinámicamente
 function createVolumeControl() {
@@ -298,12 +322,14 @@ audio.addEventListener('loadedmetadata', updateDuration);
 audio.addEventListener('timeupdate', updateProgress);
 audio.addEventListener('ended', playNextTrack);
 
-// Toggle de letras
 lyricsToggle.addEventListener('click', function() {
-lyricsContent.classList.toggle('active');
-lyricsIcon.classList.toggle('fa-chevron-down');
-lyricsIcon.classList.toggle('fa-chevron-up');
+    lyricsContent.classList.toggle('active');
+    lyricsIcon.classList.toggle('fa-chevron-down');
+    lyricsIcon.classList.toggle('fa-chevron-up');
+    updateLyricsPanelHeight();
 });
+
+window.addEventListener('resize', updateLyricsPanelHeight);
 
 // Cargar álbum inicial CORREGIDO
 //selectAlbum('royaumes_album');
@@ -426,7 +452,7 @@ function selectTrack(index, scrollToPlayer = false) {
 
     // Actualizar información de reproducción
     nowPlayingTitle.textContent = track.title;
-    lyricsText.textContent = track.lyrics || "No hay letra disponible para esta canción";
+    setLyricsDisplay(track.lyrics);
 
     // Reiniciar progreso
     progress.style.width = '0%';
