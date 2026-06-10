@@ -81,7 +81,7 @@
             width: 15vw;        /* responsivo: 60% del ancho de la ventana */
             height: auto;
             margin-top: -10px;  /* súbelo */
-            margin-left: -60px; /* muévelo a la izquierda */
+            margin-left: 0px; /* muévelo a la izquierda */
         }
         /*.hero-logo {
             image-rendering: -webkit-optimize-contrast;
@@ -216,6 +216,7 @@
             position: relative;
             margin-bottom: 0;
             margin-right: 0;
+            opacity: 0.7;
         }
 
         .hero h1 {
@@ -804,7 +805,7 @@
             transform: translateY(0);
         }
         .highlight {
-            color: #e74c3c;
+            color: #f7f5f4;
             font-weight: bold;
         }
         .copyright {
@@ -989,6 +990,117 @@
             border: 0;
         }
 
+/*ingenium*/        
+.brand-ingenium-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.brand-ingenium {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 32px;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.brand-ingenium:hover {
+  border-color: rgba(245, 166, 35, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--text-light), #ffc837);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-ingenium:hover .brand-logo {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(245, 166, 35, 0.4);
+}
+
+.brand-text {
+  text-align: left;
+}
+
+.brand-text h5 {
+  color: #fff;
+  margin-bottom: 4px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.brand-ingenium:hover .brand-text h5 {
+  color: var(--accent-color);
+}
+
+.brand-text p {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .brand-ingenium {
+    padding: 16px 24px;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-text h5 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-ingenium {
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-text h5 {
+    font-size: 1rem;
+  }
+
+  .brand-text p {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+}
 
 
 
@@ -1013,6 +1125,7 @@
                 font-size: 0.95rem;
                 padding: 0.8rem 1.6rem;
                 margin-bottom: 0;
+                opacity: 0.7;
             }
         }
 
@@ -1068,6 +1181,7 @@
                 padding: 0.75rem 1.5rem;
                 width: auto;
                 margin-bottom: 0;
+                opacity: 0.7;
             }
 
             .section-title h2 {
@@ -1097,17 +1211,27 @@
             }
             
             .hero-content {
-                padding: 0 0 1.5rem 0;
-                align-items: flex-end;
-                justify-content: center;
+                padding: 0 5 1.5rem 0;
+                width: 100%;
+                /*justify-content: right;*/
+                display: flex;
+                 justify-content: space-between; /* Distribuye espacio entre elementos */
+    align-items: flex-end;
             }
             
             .hero-content .btn {
-                font-size: 0.85rem;
-                padding: 0.7rem 1.3rem;
-                width: auto;
-                max-width: 90%;
+                font-size: 0.75rem;
+                padding: 0.1rem 1.5rem;
+                width: 35%;
+                max-width: 80%;
                 margin-bottom: 0;
+                margin-left: auto; /* Empuja el botón a la derecha */
+                margin-right: 0;
+    
+                /* Para hacerlo transparente */
+                opacity: 0.7;           /* 0 = totalmente transparente, 1 = sólido */
+                /* o usa background-color con transparencia: */
+               /* background-color: rgba(0, 0, 0, 0.7); /* Negro con 70% opacidad */
             }
             
             .section-title h2 {
