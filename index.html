@@ -2,178 +2,175 @@
 <html lang="fr-CA">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vincent Alizé (Vincent Vachon) | Vincentalize — musique folk-orchestrale au Québec</title>
     <meta name="description" content="Site officiel de Vincent Alizé, projet Vincentalize de l'artiste Vincent Vachon. Ancien chanteur de NOEM : musique folk-orchestrale, albums et spectacles au Québec.">
     <meta name="author" content="Vincent Alizé">
     <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="canonical" href="https://www.vincentalize.ca/">
     
-    <!-- Open Graph -->
+    <!-- Meta Tags Open Graph para redes sociales -->
     <meta property="og:title" content="Vincent Alizé (Vincent Vachon) | Vincentalize">
-    <meta property="og:description" content="Site officiel - musique folk-orchestrale québécoise.">
+    <meta property="og:description" content="Vincent Vachon, sous le nom d'artiste Vincent Alizé et le projet Vincentalize. Musique folk-orchestrale québécoise, ancien chanteur de NOEM.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.vincentalize.ca/">
     <meta property="og:image" content="https://www.vincentalize.ca/assets/img/social-preview-vincentalize-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="fr_CA">
     
+    <!-- Meta Tags para Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="keywords" content="Vincent Alizé, Vincent Vachon, Vincentalize, musique québécoise, folk orchestral, NOEM, spectacles Québec">
+    <meta name="twitter:title" content="Vincent Alizé (Vincent Vachon) | Vincentalize">
+    <meta name="twitter:description" content="Vincent Vachon — Vincent Alizé, projet Vincentalize. Musique folk-orchestrale au Québec, ancien de NOEM.">
+    <!--<meta name="twitter:image" content="https://www.vincentalize.com/images/vincent-alize-twitter.jpg">-->
     
+    <!-- Meta Tags adicionales para SEO -->
+    <meta name="keywords" content="Vincent Alizé, Vincent Vachon, Vincentalize, musique québécoise, folk orchestral, NOEM, album solo, musique Estrie, Sherbrooke, auteur-compositeur-interprète">
+    
+    <!-- Enlaces a hreflang si tienes versiones en otros idiomas -->
     <link rel="alternate" hreflang="fr-CA" href="https://www.vincentalize.ca/" />
+    <!-- <link rel="alternate" hreflang="en" href="https://www.vincentalize.ca/en/" /> -->
     <meta property="og:site_name" content="Vincentalize">
 
-    <!-- Favicons -->
+    <!-- Favicon estándar -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- PNG favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+
+    <!-- Apple / iOS -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+
+    <!-- Manifest para PWA -->
     <link rel="manifest" href="site.webmanifest">
+
+    <!-- Colores del navegador -->
     <meta name="theme-color" content="#ffffff">
 
+    
+
+    <!-- Preconexión para mejorar velocidad -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/estilos.css">
     
-    <style>
-        /* Refonte section "Sur moi" : logo central à la place du titre textuel */
-        .bio-logo-hero {
-            text-align: center;
-            margin: 1rem auto 2rem auto;
+    <!-- Schema.org markup para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Vincentalize",
+          "alternateName": "Vincent Alizé",
+          "url": "https://www.vincentalize.ca/",
+          "inLanguage": "fr-CA",
+          "description": "Site officiel du projet Vincentalize de Vincent Alizé (Vincent Vachon)."
+        },
+        {
+          "@type": "Person",
+          "name": "Vincent Alizé",
+          "givenName": "Vincent",
+          "familyName": "Vachon",
+          "alternateName": ["Vincentalize", "Vincent Vachon"],
+          "jobTitle": "Auteur-compositeur-interprète",
+          "description": "Artiste musical québécois (Vincent Vachon), connu sous le nom de scène Vincent Alizé et le projet Vincentalize. Musique folk-orchestrale.",
+          "url": "https://www.vincentalize.ca/",
+          "image": "https://www.vincentalize.ca/assets/img/vincent_alize.jpg",
+          "homeLocation": {
+            "@type": "Place",
+            "name": "Sherbrooke, Québec, Canada"
+          },
+          "knowsAbout": ["Musique folk-orchestrale", "Musique québécoise", "NOEM"],
+          "sameAs": [
+            "https://www.facebook.com/vincentalize1",
+            "https://vincentalize.bandcamp.com",
+            "https://dansnoslaurentides.com/actualites/musique/vincent-alize",
+            "https://www.youtube.com/channel/UCOFgQLNSwrRzIJwKhO6EQEw"
+          ]
         }
-        .bio-logo-hero img {
-            max-width: 320px;
-            width: 90%;
-            height: auto;
-            filter: drop-shadow(0 6px 14px rgba(0,0,0,0.1));
-            transition: transform 0.2s ease;
-        }
-        .bio-logo-hero img:hover {
-            transform: scale(1.02);
-        }
-        /* Texte biographique enrichi */
-        .bio-long-text {
-            max-width: 880px;
-            margin: 0 auto;
-            background: #fefaf0;
-            padding: 2rem 2.2rem;
-            border-radius: 40px;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #2c3e2f;
-        }
-        .bio-long-text .highlight {
-            font-weight: 700;
-            color: #b45f2b;
-        }
-        .btn-bandcamp {
-            display: inline-block;
-            margin-top: 1.5rem;
-        }
-        /* Section spectacles */
-        .shows-premium {
-            background: linear-gradient(135deg, #fff8ed 0%, #fef3e0 100%);
-            border-radius: 48px;
-            padding: 2.2rem 1.5rem;
-            margin: 3rem 0;
-            box-shadow: 0 10px 22px rgba(0,0,0,0.05);
-        }
-        .shows-title {
-            font-size: 2rem;
-            font-weight: 800;
-            text-align: center;
-            color: #7a4e2a;
-            letter-spacing: -0.5px;
-        }
-        .shows-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.8rem;
-            margin-top: 2rem;
-        }
-        .show-card {
-            background: white;
-            border-radius: 28px;
-            padding: 1.2rem 1.5rem;
-            min-width: 240px;
-            flex: 1 0 220px;
-            text-align: center;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-            transition: all 0.2s;
-            border-left: 5px solid #c27e4a;
-        }
-        .show-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .show-date { font-size: 1.5rem; font-weight: 800; color: #9b5e2c; }
-        .show-lieu { font-weight: 600; margin-top: 6px; color: #2d4a2c; }
-        .show-heure { font-size: 0.85rem; color: #7e6a54; margin-top: 6px; }
-        
-        /* ajuste menu actif et responsive */
-        .nav-links li a.active { color: #c27e4a; border-bottom: 2px solid #c27e4a; }
-        @media (max-width: 700px) {
-            .bio-logo-hero img { max-width: 220px; }
-            .bio-long-text { padding: 1.5rem; }
-        }
-        /* supprimer l'ancien h3 dans about-text pour éviter doublon */
-        .about-text h3:first-of-type { display: none; }
-        .about-text { text-align: center; }
-        .about-image { margin-bottom: 1rem; }
-    </style>
+      ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
                 <a href="#inicio" class="logo">
-                    <img src="assets/img/vincent.png" class="hero-logo" alt="Vincentalize — Vincent Alizé">
+                    <!--<i class="fas fa-headphones"></i>
+                    < Vincent Alizé-->
+                    <img src="assets/img/vincent.png" class="hero-logo" alt="Vincentalize — Vincent Alizé (Vincent Vachon)">
                 </a>
                 <ul class="nav-links">
                     <li><a href="#inicio">Accueil</a></li>
-                    <li><a href="#surmoi-section">Sur moi</a></li>   <!-- Menu "Sur moi" redirige vers la section biographique -->
+                    <li><a href="#sobre">À propos</a></li>
+                    <li><a href="#spectacles">Spectacles</a></li>
                     <li><a href="#musica">Musique</a></li>
                     <li><a href="#videos-section">Vidéos</a></li>
-                    <li><a href="#spectacles">Spectacles</a></li>
                     <li><a href="#contacto">Contact</a></li>
                 </ul>
                 <div class="hamburger">
-                    <span></span><span></span><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <img src="assets/img/Foret_Nuits_Incandescentes.jpg" class="hero-image" alt="Vincent Alizé illustration" width="1400" height="540" fetchpriority="high">
+        <img
+            src="assets/img/Foret_Nuits_Incandescentes.jpg"
+            class="hero-image"
+            alt="Vincent Alizé (Vincent Vachon) — projet Vincentalize, illustration Forêt aux nuits incandescentes"
+            width="1400"
+            height="540"
+            fetchpriority="high"
+            decoding="async"
+        >
         <div class="container">
             <div class="hero-content">
-                <h1 class="visually-hidden">Vincent Alizé — Vincentalize, musique folk-orchestrale</h1>
+                <h1 class="visually-hidden">Vincent Alizé — Vincentalize (Vincent Vachon), musique folk-orchestrale</h1>
                 <a href="#musica" class="btn">Découvrez ma musique</a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION "SUR MOI" : LOGO CENTRAL à la place du titre texte -->
-    <section id="surmoi-section" class="about">
+    <!-- Sobre el artista -->
+    <section id="sobre" class="about">
         <div class="container">
-            <!-- Au lieu du titre "Sur moi" (texte), on place le logo Vincent Alizé, plus grand et élégant -->
-            <div class="bio-logo-hero fade-in">
+            <div class="section-title">
                 <img src="assets/img/vincent.png" alt="Logo Vincent Alizé - signature artistique">
             </div>
-            <!-- Biographie complète (texte long) sans le titre bleu superflu -->
-            <div class="bio-long-text fade-in">
-                <p><span class="highlight">Vincent Alizé</span> (Vincent Vachon) est un auteur-compositeur-interprète de Sherbrooke, Québec. Avec son projet <span class="highlight">Vincentalize</span>, il crée une musique folk-orchestrale où la poésie rencontre les cordes et l’émotion pure. Ancien chanteur du groupe <span class="highlight">NOEM</span>, il développe un univers à la fois intime et grandiose, porté par des textes habités.</p>
-                <p>Sur scène, il est accompagné par le violoniste <span class="highlight">Matti Hanna</span>, tissant une atmosphère unique entre folk organique et arrangements cinématographiques. Leur complicité donne vie à un spectacle envoûtant, invitant le public à un voyage sensoriel, “comme si l’on regardait à travers un télescope à la recherche du merveilleux”.</p>
-                <p>En 2021, il lance l'album <span class="highlight">« Nos royaumes interdits »</span> ainsi que plusieurs singles acclamés (« Ma météore », « Dans tes bras », « Aujourd'hui »). Son style raffiné et sa générosité sur scène lui valent une reconnaissance grandissante au Québec, des petites salles intimes aux festivals d’été.</p>
-                <p>Vincent Alizé puise son inspiration dans les forêts de l’Estrie et les nuits incandescentes, transformant chaque concert en un moment de partage authentique. Sa musique résonne comme un appel à l’émerveillement, entre douceur et intensité.</p>
-                <div style="text-align: center; margin-top: 1.8rem;">
-                    <a href="https://vincentalize.bandcamp.com" target="_blank" class="btn btn-bandcamp">Explorer sur Bandcamp</a>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="assets/img/vincent_alize.jpg" alt="Vincent Alizé (Vincent Vachon), auteur-compositeur Vincentalize">
+                </div>
+                <div class="about-text">
+                    
+                    <p><span class="highlight">Vincent Alizé</span> révèle une musique folk-orchestrale empreinte de douceur et d’intensité. Sur scène, il mêle son univers aux cordes du violoniste <span class="highlight">Matti Hanna</span> dans un tableau intime. Ensemble, ils proposent un voyage musical à la fois envoûtant et émouvant. D’une pièce à l’autre, on découvre le spectre de leur musique comme si l’on regardait à travers un télescope à la recherche du merveilleux.</p>
+
+                      <a href="https://vincentalize.bandcamp.com" target="_blank" class="btn" alt="bandcamp">Explorer sur Bandcamp</a>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!--espectaculos-->
+    
     <!-- SECTION SPECTACLES À VENIR (demande explicite) -->
     <section id="spectacles" class="container">
         <div class="shows-premium">
@@ -199,178 +196,326 @@
         </div>
     </section>
 
-    <!-- SECTION MUSIQUE (reprise de la structure existante) -->
+
+    <!-- Música -->
     <section id="musica" class="music">
         <div class="container">
-            <div class="section-title"><h2>Musique</h2></div>
+            <div class="section-title">
+                <h2>Musique</h2>
+            </div>
             <div class="music-player fade-in">
                 <div class="player-header">
                     <div class="album-selector">
                         <div class="album-option active" data-album="royaumes_album">
-                            <img src="assets/img/nos_royaumes_interdits_album.jpg" alt="Nos royaumes interdits album">
-                            <h4>Nos royaumes interdits (album)</h4><p>2021 • 12 pistes</p>
+                            <img src="assets/img/nos_royaumes_interdits_album.jpg" alt="Nos royaumes interdits (album)">
+                            <h4>Nos royaumes interdits (album)</h4>
+                            <p>2021 • 12 pistes</p>
                         </div>
                         <div class="album-option" data-album="royaumes_single">
-                            <img src="assets/img/nos_royaumes_interdits_single.jpg" alt="single">
-                            <h4>Nos royaumes interdits (single)</h4><p>2021 • 1 piste</p>
+                            <img src="assets/img/nos_royaumes_interdits_single.jpg" alt="Nos royaumes interdits (single)">
+                            <h4>Nos royaumes interdits (single)</h4>
+                            <p>2021 • 1 piste</p>
                         </div>
                         <div class="album-option" data-album="météore">
                             <img src="assets/img/ma_meteore.jpg" alt="Ma météore">
-                            <h4>Ma météore (single)</h4><p>2021 • 1 piste</p>
+                            <h4>Ma météore (single)                            </h4>
+                            <p>2021 • 1 piste</p>
                         </div>
                         <div class="album-option" data-album="Dans">
-                            <img src="assets/img/dans_tes_bras.jpg" alt="Dans tes bras">
-                            <h4>Dans tes bras (single)</h4><p>2021 • 1 piste</p>
+                            <img src="assets/img/dans_tes_bras.jpg" alt="Dans tes bras (single)  ">
+                            <h4>Dans tes bras (single)                            </h4>
+                            <p>2021 • 1 piste</p>
                         </div>
                         <div class="album-option" data-album="Aujourd">
-                            <img src="assets/img/aujourdhui.jpg" alt="Aujourd'hui">
-                            <h4>Aujourd'hui (single)</h4><p>2021 • 1 piste</p>
+                            <img src="assets/img/aujourdhui.jpg" alt="Aujourd'hui (single)">
+                            <h4>Aujourd'hui (single)                            </h4>
+                            <p>2021 • 1 piste</p>
                         </div>
                         <div class="album-option" data-album="Notre">
-                            <img src="assets/img/notre_terre_qui_etait.jpg" alt="Notre terre">
-                            <h4>Notre terre qui était (single)</h4><p>2021 • 1 piste</p>
+                            <img src="assets/img/notre_terre_qui_etait.jpg" alt="Notre terre qui était (single)">
+                            <h4>Notre terre qui était (single)                            </h4>
+                            <p>2021 • 1 pistes</p>
                         </div>
                         <div class="album-option" data-album="Deux">
-                            <img src="assets/img/deus_soufles.jpg" alt="Deux souffles">
-                            <h4>Deux souffles (mini-album)</h4><p>2018 • 2 pistes</p>
-                        </div>
-                        <div id="track-selector"></div>
+                            <img src="assets/img/deus_soufles.jpg" alt="Deux souffles (mini-album) ">
+                            <h4>Deux souffles (mini-album)    </h4>
+                            <p>2018 • 2 pistes</p>
+                        </div>  
+                        <div id="track-selector"></div>                      
                     </div>
-                    <div class="track-selector"></div>
+                    
+                    <div  class="track-selector">
+                        <!-- Las opciones de pistas se cargarán dinámicamente -->
+                    </div>
                     <div id="player-body"></div>
                 </div>
-                <div class="player-body">
+                
+                <div  class="player-body">
                     <div class="now-playing">
-                        <div class="now-playing-image"><img src="assets/img/vincent_alize.jpg" alt="album" id="nowPlayingImage"></div>
+                        <div class="now-playing-image">
+                            <img src="assets/img/vincent_alize.jpg" alt="Álbum actual" id="nowPlayingImage">
+                        </div>
                         <div class="now-playing-info">
                             <h3 id="nowPlayingTitle">Choisis une chanson</h3>
                             <p id="nowPlayingAlbum">Vincent Alizé</p>
                             <div class="player-controls">
-                                <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
-                                <button class="control-btn play-btn" id="playPauseBtn"><i class="fas fa-play"></i></button>
-                                <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                                <button class="control-btn" id="prevBtn">
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button class="control-btn play-btn" id="playPauseBtn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="control-btn" id="nextBtn">
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
                             </div>
                             <div id="progress-container" class="progress-container">
-                                <div class="progress-bar" id="progressBar"><div class="progress" id="progress"></div></div>
-                                <div class="time-info"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+                                <div class="progress-bar" id="progressBar">
+                                    <div class="progress" id="progress"></div>
+                                </div>
+                                <div class="time-info">
+                                    <span id="currentTime">0:00</span>
+                                    <span id="duration">0:00</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="lyrics-section">
-                        <div class="lyrics-toggle" id="lyricsToggle"><h4>Paroles de chansons</h4><i class="fas fa-chevron-down" id="lyricsIcon"></i></div>
-                        <div class="lyrics-content" id="lyricsContent"><div class="lyrics" id="lyricsText">Choisis une chanson pour voir ses paroles</div></div>
+                        <div class="lyrics-toggle" id="lyricsToggle">
+                            <h4>Paroles de chansons</h4>
+                            <i class="fas fa-chevron-down" id="lyricsIcon"></i>
+                        </div>
+                        <div class="lyrics-content" id="lyricsContent">
+                            <div class="lyrics" id="lyricsText">
+                                Choisis une chanson pour voir ses paroles
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vidéos -->
-    <section id="videos-section" class="videos-section">
-        <div class="container">
-            <div class="section-title"><h2>Performances et Clips</h2></div>
-            <div class="videos-grid">
-                <div class="video-card" data-video-id="ZhwicOSWMqo" data-video-title="Nos royaumes interdits">
-                    <div class="video-thumbnail"><img src="https://img.youtube.com/vi/ZhwicOSWMqo/maxresdefault.jpg" alt="clip"><div class="play-button"><i class="fas fa-play"></i></div></div>
-                    <div class="video-info"><h3>Les nuits incandescentes - Vidéoclip</h3><a href="https://youtu.be/ZhwicOSWMqo" target="_blank" class="youtube-link">Voir sur YouTube</a></div>
+
+<!-- Videos Section -->
+<section id="videos-section" class="videos-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Performances et Clips</h2>
+        </div>
+        
+        <!-- Videos Grid -->
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-card" data-video-id="ZhwicOSWMqo" data-video-title="Nos royaumes interdits">
+                <div class="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/ZhwicOSWMqo/maxresdefault.jpg" alt="Vincent Alizé - Nos royaumes interdits">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
-                <div class="video-card" data-video-id="BAMZR9PHd0Y" data-video-title="Performance acoustique">
-                    <div class="video-thumbnail"><img src="https://img.youtube.com/vi/BAMZR9PHd0Y/maxresdefault.jpg" alt="live"><div class="play-button"><i class="fas fa-play"></i></div></div>
-                    <div class="video-info"><h3>Ce qu'il reste de moi</h3><p>Live à Bandeen Hall avec le quatuor Esca</p><a href="https://youtu.be/BAMZR9PHd0Y" target="_blank" class="youtube-link">Voir sur YouTube</a></div>
+                <div class="video-info">
+                    <h3>Les nuits incandescentes - Vidéoclip</h3>
+                    <a href="https://youtu.be/ZhwicOSWMqo" class="youtube-link" target="_blank">Voir sur YouTube</a>
                 </div>
-                <div class="video-card" data-video-id="5ccc0mg_MBw" data-video-title="L'ombre des possibles">
-                    <div class="video-thumbnail"><img src="https://img.youtube.com/vi/5ccc0mg_MBw/maxresdefault.jpg" alt="acoustique"><div class="play-button"><i class="fas fa-play"></i></div></div>
-                    <div class="video-info"><h3>Les nuits incandescentes - acoustique</h3><p>Studio Red Tube</p><a href="https://youtu.be/5ccc0mg_MBw" target="_blank" class="youtube-link">Voir sur YouTube</a></div>
+            </div>
+            
+
+            
+            <!-- Video 3 -->
+            <div class="video-card" data-video-id="BAMZR9PHd0Y" data-video-title="Performance acoustique">
+                <div class="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/BAMZR9PHd0Y/maxresdefault.jpg" alt="Vincent Alizé - Performance acoustique">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Ce qu'il reste de moi </h3>
+                    <p>Live à Bandeen Hall avec le quatuor Esca</p>
+                    <a href="https://youtu.be/BAMZR9PHd0Y" class="youtube-link" target="_blank">Voir sur YouTube</a>
+                </div>
+            </div>
+            
+            <!-- Video 4 -->
+            <div class="video-card" data-video-id="5ccc0mg_MBw" data-video-title="L'ombre des possibles">
+                <div class="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/5ccc0mg_MBw/maxresdefault.jpg" alt="Vincent Alizé - L'ombre des possibles">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>Les nuits incandescentes - acoustique</h3>
+                    <p>Acoustique au studio Red Tube.</p>
+                    <a href="https://youtu.be/5ccc0mg_MBw" class="youtube-link" target="_blank">Voir sur YouTube</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Modal vidéo -->
-    <div class="video-modal" id="videoModal"><div class="modal-content"><button class="close-modal" id="closeModal">&times;</button><div class="video-container" id="videoContainer"></div></div></div>
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <div class="video-container" id="videoContainer">
+            <!-- El iframe se insertará aquí dinámicamente -->
+        </div>
+    </div>
+</div>
 
-    <!-- Contact -->
+
+
+    <!-- Contacto -->
     <section id="contacto" class="contact">
         <div class="container">
-            <div class="section-title"><h2>Contact</h2></div>
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
             <div class="contact-content fade-in">
                 <div class="contact-info">
+                    
                     <div class="contact-details">
-                        <div class="contact-detail"><i class="fas fa-envelope"></i><span>vincentalize.musique@gmail.com</span></div>
-                        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><span>Sherbrooke, Québec</span></div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>vincentalize.musique@gmail.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sherbrooke, Québec</span>
+                        </div>
                     </div>
                     <h3>Suivez-moi sur:</h3>
                     <div class="social-links">
-                        <a href="https://vincentalize.bandcamp.com" target="_blank" class="social-link"><i class="fab fa-bandcamp"></i></a>
-                        <a href="https://www.facebook.com/vincentalize1/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.youtube.com/channel/UCOFgQLNSwrRzIJwKhO6EQEw" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://vincentalize.bandcamp.com" target="_blank" class="social-link">
+                            <i class="fab fa-bandcamp"></i>
+                        </a>
+                        <a href="https://www.facebook.com/vincentalize1/"  target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/channel/UCOFgQLNSwrRzIJwKhO6EQEw"  target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="footer-logo"><i class="fas fa-headphones"></i> VincentAlizé</a>
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-headphones"></i>
+                    VincentAlizé
+                </a>
                 <ul class="footer-links">
-                    <li><a href="#inicio">Accueil</a></li><li><a href="#surmoi-section">Sur moi</a></li>
-                    <li><a href="#musica">Musique</a></li><li><a href="#videos-section">Vidéos</a></li>
-                    <li><a href="#spectacles">Spectacles</a></li><li><a href="#contacto">Contact</a></li>
+                    <li><a href="#inicio">Accueil</a></li>
+                    <li><a href="#sobre">Sur moi</a></li>
+                    <li><a href="#spectacles">Spectacles</a></li>
+                    <li><a href="#musica">Musique</a></li>
+                    <li><a href="#videos-section">Vidéos</a></li>
+                    <li><a href="#contacto">Contact</a></li>
                 </ul>
+                
             </div>
-            <a href="https://www.ingeniumbright.com/fr" target="_blank" rel="noopener noreferrer" class="brand-ingenium-link">
-                <div class="brand-ingenium"><div class="brand-logo"><img src="assets/img/ingenium.png" alt="IngeniumBright" class="logo-img"></div><div class="brand-text"><p>Technologie et développement</p><h5>IngeniumBright</h5></div></div>
-            </a>
+          <!-- Tarjeta de publicidad para IngeniumBright con imagen -->
+          <a
+            href="https://www.ingeniumbright.com/fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="brand-ingenium-link"
+          >
+            <div class="brand-ingenium">
+              <div class="brand-logo">
+                <img src="assets/img/ingenium.png" alt="IngeniumBright" class="logo-img" cover />
+              </div>
+              <div class="brand-text">
+                <p>Technologie et développement</p>
+                <h5>IngeniumBright</h5>
+              </div>
+            </div>
+          </a>
         </div>
     </footer>
-
     <script src="assets/js/scripts.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Gestion modal vidéo
-            const videoCards = document.querySelectorAll('.video-card');
-            const videoModal = document.getElementById('videoModal');
-            const closeModal = document.getElementById('closeModal');
-            const videoContainer = document.getElementById('videoContainer');
-            const restricted = ['ZhwicOSWMqo'];
-            videoCards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    if(e.target.closest('.youtube-link')) return;
-                    const vid = this.dataset.videoId;
-                    const title = this.dataset.videoTitle;
-                    if(restricted.includes(vid)) window.open(`https://youtu.be/${vid}`, '_blank');
-                    else {
-                        videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${vid}?autoplay=1" title="${title}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-                        videoModal.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
-                    }
-                });
-            });
-            const closeModalFn = () => { if(videoModal) { videoModal.style.display = 'none'; videoContainer.innerHTML = ''; document.body.style.overflow = 'auto'; }};
-            if(closeModal) closeModal.addEventListener('click', closeModalFn);
-            if(videoModal) videoModal.addEventListener('click', (e) => { if(e.target === videoModal) closeModalFn(); });
-            document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && videoModal && videoModal.style.display === 'flex') closeModalFn(); });
-            
-            // menu active highlight
-            const sections = document.querySelectorAll('section[id], div[id="spectacles"]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                const scrollPos = window.scrollY + 130;
-                sections.forEach(section => {
-                    if(section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos)
-                        current = section.getAttribute('id');
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    const href = link.getAttribute('href').substring(1);
-                    if(href === current) link.classList.add('active');
-                });
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoCards = document.querySelectorAll('.video-card');
+        const videoModal = document.getElementById('videoModal');
+        const closeModal = document.getElementById('closeModal');
+        const videoContainer = document.getElementById('videoContainer');
+        
+        // Lista de videos que sabemos que tienen restricciones
+        const restrictedVideos = [
+            'ZhwicOSWMqo'
+            // Agregar aquí otros IDs de videos con restricciones
+        ];
+        
+        // Función simple para verificar si un video tiene restricciones
+        function isVideoRestricted(videoId) {
+            return restrictedVideos.includes(videoId);
+        }
+        
+        // Abrir modal al hacer clic en una miniatura
+        videoCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const videoId = this.getAttribute('data-video-id');
+                const videoTitle = this.getAttribute('data-video-title');
+                const youtubeUrl = `https://youtu.be/${videoId}`;
+                const isDirectLink = this.hasAttribute('data-direct-link');
+                
+                // Verificar si el video está en nuestra lista de restringidos
+                if (isVideoRestricted(videoId) || isDirectLink) {
+                    // Abrir directamente en YouTube
+                    window.open(youtubeUrl, '_blank');
+                } else {
+                    // Mostrar el video en el modal
+                    videoContainer.innerHTML = `
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                            title="${videoTitle}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    `;
+                    videoModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
             });
         });
-    </script>
-</body>
+        
+        // Cerrar modal
+        closeModal.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+            videoContainer.innerHTML = '';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Cerrar modal al hacer clic fuera del contenido
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                videoModal.style.display = 'none';
+                videoContainer.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Cerrar modal con la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.style.display === 'flex') {
+                videoModal.style.display = 'none';
+                videoContainer.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
 </html>
