@@ -574,3 +574,86 @@ return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 document.addEventListener('DOMContentLoaded', function() {
     initializePage();
 });
+
+
+
+// ===== CARRUSEL =====
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel-container');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    const indicatorsContainer = carousel.querySelector('.carousel-indicators');
+    let currentSlide = 0;
+    let autoPlayInterval = null;
+    const totalSlides = slides.length;
+
+    // Crear indicadores
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(dot);
+    }
+    const indicators = indicatorsContainer.querySelectorAll('span');
+
+    function goToSlide(index) {
+        // Quitar active de todos
+        slides.forEach(s => s.classList.remove('active'));
+        indicators.forEach(d => d.classList.remove('active'));
+        
+        // Asegurar índice válido
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentSlide = index;
+        
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+
+    // Eventos de botones
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+
+    // Auto-play (cada 4 segundos)
+    function startAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+    }
+
+    // Pausar auto-play al hacer hover
+    carousel.addEventListener('mouseenter', () => {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+    });
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    // Iniciar auto-play
+    startAutoPlay();
+
+    // Asegurar que la primera imagen esté visible
+    goToSlide(0);
+});
