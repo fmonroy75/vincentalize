@@ -1287,6 +1287,7 @@
 
 
         /* ===== CARRUSEL ===== */
+/* ===== CARRUSEL ===== */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -1295,12 +1296,34 @@
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    /* Importante: asegurar que tenga fondo por si las imágenes tardan */
+    background: #f5f0e8;
 }
 
 .carousel-slides {
     position: relative;
     width: 100%;
-    height: 400px; /* Ajusta según necesites */
+    /* 🟢 EN VEZ DE ALTURA FIJA, USAMOS ASPECT-RATIO */
+    aspect-ratio: 4 / 3;  /* Proporción 4:3 (ajusta según tus fotos) */
+    /* Si tus fotos son más verticales, usa 3/4 */
+    /* Si son cuadradas, usa 1/1 */
+    background: #f5f0e8; /* Fondo de respaldo */
+}
+
+/* Fallback para navegadores que no soportan aspect-ratio */
+@supports not (aspect-ratio: 4/3) {
+    .carousel-slides {
+        height: 0;
+        padding-bottom: 75%; /* 4:3 = 75% */
+        overflow: hidden;
+    }
+    .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .carousel-slide {
@@ -1312,11 +1335,14 @@
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
     visibility: hidden;
+    /* 🟢 Aseguramos que las imágenes se vean bien */
+    background: #f5f0e8;
 }
 
 .carousel-slide.active {
     opacity: 1;
     visibility: visible;
+    z-index: 2; /* Para que esté por encima */
 }
 
 .carousel-slide img {
@@ -1324,6 +1350,8 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    /* 🟢 Aseguramos que la imagen se vea completa */
+    object-position: center;
 }
 
 /* Botones del carrusel */
@@ -1331,7 +1359,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.9);
     border: none;
     border-radius: 50%;
     width: 44px;
@@ -1341,16 +1369,22 @@
     color: #5a3e2b;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 20; /* 🟢 Aumentado para que esté por encima */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* 🟢 Asegurar que sean clickeables en móvil */
+    touch-action: manipulation;
 }
 
 .carousel-btn:hover {
     background: #fff;
     transform: translateY(-50%) scale(1.08);
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .carousel-btn.prev-btn {
@@ -1369,9 +1403,14 @@
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
-    z-index: 10;
+    z-index: 20; /* 🟢 Aumentado */
     flex-wrap: wrap;
     justify-content: center;
+    /* 🟢 Para que los puntos se vean bien sobre cualquier imagen */
+    padding: 4px 8px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
 }
 
 .carousel-indicators span {
@@ -1382,6 +1421,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid rgba(255,255,255,0.3);
+    /* 🟢 Para mejor interacción táctil */
+    touch-action: manipulation;
+    min-width: 12px; /* Evita que se encojan */
+    min-height: 12px;
 }
 
 .carousel-indicators span.active {
@@ -1390,30 +1433,87 @@
     transform: scale(1.2);
 }
 
+.carousel-indicators span:hover {
+    background: rgba(255,255,255,0.8);
+}
+
+/* 🟢 NUEVO: Asegurar que el contenedor padre no restrinja */
+.about-image {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    margin: 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .carousel-slides {
-        height: 300px;
+        aspect-ratio: 4 / 3; /* Mantiene proporción */
     }
     .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .carousel-btn.prev-btn {
+        left: 8px;
+    }
+    .carousel-btn.next-btn {
+        right: 8px;
+    }
+    .carousel-indicators {
+        bottom: 12px;
+        gap: 6px;
+        padding: 4px 8px;
+    }
+    .carousel-indicators span {
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        min-height: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-slides {
-        height: 250px;
+        aspect-ratio: 4 / 3; /* O 3/4 si tus fotos son verticales */
     }
     .carousel-btn {
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
         font-size: 0.8rem;
     }
+    .carousel-btn.prev-btn {
+        left: 6px;
+    }
+    .carousel-btn.next-btn {
+        right: 6px;
+    }
+    .carousel-indicators {
+        bottom: 10px;
+        gap: 5px;
+        padding: 3px 6px;
+    }
     .carousel-indicators span {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
+        min-height: 8px;
+    }
+}
+
+/* 🟢 NUEVO: Para pantallas muy pequeñas */
+@media (max-width: 380px) {
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+    .carousel-btn.prev-btn {
+        left: 4px;
+    }
+    .carousel-btn.next-btn {
+        right: 4px;
     }
 }
        /* fin ===== CARRUSEL ===== */
